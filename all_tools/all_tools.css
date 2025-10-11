@@ -191,13 +191,13 @@ html {
 }
 
 .generator .category-title {
-    color: #28a745;
-    border-bottom-color: #28a745;
+    color: #ffc107;
+    border-bottom-color: #ffc107;
 }
 
 .finance .category-title {
-    color: #ffc107;
-    border-bottom-color: #ffc107;
+    color: #28a745;
+    border-bottom-color: #28a745;
 }
 
 .others .category-title {
