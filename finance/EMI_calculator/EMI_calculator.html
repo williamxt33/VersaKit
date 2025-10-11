@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>EMI Calculator - VersaKit</title>
+    <meta name="description" content="Calculate EMI for loans, car loans, personal loans, and home loans. Compare different loan scenarios with detailed amortization." />
+    <meta name="keywords" content="EMI calculator, loan EMI, equated monthly installment, loan calculator, personal loan, car loan, home loan" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="EMI_calculator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>EMI Calculator</h1>
+            <p>Calculate your Equated Monthly Installments</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <h2>Loan Details</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="loanAmount">Loan Amount</label>
+                        <input type="number" class="text-input" id="loanAmount" value="500000" min="0" step="1000">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="interestRate">Interest Rate (% per annum)</label>
+                        <input type="number" class="text-input" id="interestRate" value="10.5" min="0" max="30" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="loanTenure">Loan Tenure</label>
+                        <input type="number" class="text-input" id="loanTenure" value="5" min="1" max="30" step="1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="tenureType">Tenure Type</label>
+                        <select class="select-input" id="tenureType">
+                            <option value="years" selected>Years</option>
+                            <option value="months">Months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h2>Loan Type</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="loanType">Select Loan Type</label>
+                        <select class="select-input" id="loanType">
+                            <option value="home">Home Loan</option>
+                            <option value="car">Car Loan</option>
+                            <option value="personal" selected>Personal Loan</option>
+                            <option value="education">Education Loan</option>
+                            <option value="business">Business Loan</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="processingFee">Processing Fee (%)</label>
+                        <input type="number" class="text-input" id="processingFee" value="1" min="0" max="5" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="prepayment">Prepayment (Optional)</label>
+                        <input type="number" class="text-input" id="prepayment" value="0" min="0" step="1000">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="prepaymentMonth">Prepayment After (Months)</label>
+                        <input type="number" class="text-input" id="prepaymentMonth" value="12" min="1" step="1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculate-section">
+                <button class="calculate-button" onclick="calculateEMI()">Calculate EMI</button>
+                <button class="clear-button" onclick="clearForm()">Clear</button>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <h3>EMI Summary</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Monthly EMI</div>
+                        <div class="result-value highlight" id="monthlyEMI">₹0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Total Interest</div>
+                        <div class="result-value" id="totalInterest">₹0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Total Amount</div>
+                        <div class="result-value" id="totalAmount">₹0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Processing Fee</div>
+                        <div class="result-value" id="processingFeeAmount">₹0</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Loan Breakdown</div>
+                    <div class="pie-chart">
+                        <div class="pie-visual" id="pieChart"></div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #007bff;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Principal</span>
+                                    <span class="legend-amount" id="principalAmount">₹0</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #dc3545;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Interest</span>
+                                    <span class="legend-amount" id="interestAmount">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="amortization-table" id="amortizationSection">
+                <h3>Amortization Schedule (First Year)</h3>
+                <table id="amortizationTable">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>EMI</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amortizationBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-section">
+                <h3>EMI Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is EMI?</h4>
+                        <p>EMI (Equated Monthly Installment) is a fixed payment amount made by a borrower to a lender at a specified date each month.</p>
+                        <p><strong>Formula:</strong> EMI = [P x R x (1+R)^N]/[(1+R)^N-1]</p>
+                        <p>Where P = Principal, R = Monthly Interest Rate, N = Number of months</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Factors Affecting EMI</h4>
+                        <p><strong>Loan Amount:</strong> Higher loan = Higher EMI</p>
+                        <p><strong>Interest Rate:</strong> Higher rate = Higher EMI</p>
+                        <p><strong>Loan Tenure:</strong> Longer tenure = Lower EMI but more interest</p>
+                        <p><strong>Credit Score:</strong> Better score may get lower interest rates</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Types of Loans</h4>
+                        <p><strong>Home Loan:</strong> Typically 15-30 years, lower interest rates</p>
+                        <p><strong>Car Loan:</strong> Usually 1-7 years, moderate rates</p>
+                        <p><strong>Personal Loan:</strong> 1-5 years, higher interest rates</p>
+                        <p><strong>Education Loan:</strong> Flexible repayment, tax benefits</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Tips for Borrowers</h4>
+                        <p>• Compare interest rates from multiple lenders</p>
+                        <p>• Consider prepayment to reduce total interest</p>
+                        <p>• Choose tenure based on your repayment capacity</p>
+                        <p>• Maintain good credit score for better rates</p>
+                        <p>• Factor in processing fees and other charges</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="EMI_calculator.js"></script>
+</body>
+</html>

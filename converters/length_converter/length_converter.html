@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Length Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial length units easily - meters, centimeters, millimeters, feet, inches, yards, and more." />
+    <meta name="keywords" content="length converter, unit converter, metric to imperial, feet to meters, inches to cm, measurement converter" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="length_converter.css">
+
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Length Converter</h1>
+            <p>Convert between metric and imperial length units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Meter</div>
+                        <input type="number" class="unit-input" id="meter" placeholder="Enter number">
+                        <div class="unit-symbol">m</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Centimeter</div>
+                        <input type="number" class="unit-input" id="centimeter" placeholder="Enter number">
+                        <div class="unit-symbol">cm</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Millimeter</div>
+                        <input type="number" class="unit-input" id="millimeter" placeholder="Enter number">
+                        <div class="unit-symbol">mm</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Micrometer</div>
+                        <input type="number" class="unit-input" id="micrometer" placeholder="Enter number">
+                        <div class="unit-symbol">μm</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Nanometer</div>
+                        <input type="number" class="unit-input" id="nanometer" placeholder="Enter number">
+                        <div class="unit-symbol">nm</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Yard</div>
+                        <input type="number" class="unit-input" id="yard" placeholder="Enter number">
+                        <div class="unit-symbol">yd</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Foot, Feet</div>
+                        <input type="number" class="unit-input" id="foot" placeholder="Enter number">
+                        <div class="unit-symbol">ft (')</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Inch</div>
+                        <input type="number" class="unit-input" id="inch" placeholder="Enter number">
+                        <div class="unit-symbol">in (")</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Mil</div>
+                        <input type="number" class="unit-input" id="mil" placeholder="Enter number">
+                        <div class="unit-symbol">mil</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Length Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 meter = 1.09 yards = 100 centimeters = 1000 millimeters</div>
+                        <div class="example-item">1 m = 1.09 yd = 100 cm = 1000 mm</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 millimeter = 1000 micrometers = 1,000,000 nanometers</div>
+                        <div class="example-item">1 mm = 1000 μm = 1,000,000 nm</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 yard = 0.91 meters = 3 feet = 36 inches</div>
+                        <div class="example-item">1 yd = 0.91 m = 3 ft(') = 36 in(")</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 inch = 2.54 centimeters = 1000 mils</div>
+                        <div class="example-item">1 in(") = 2.54 cm = 1000 mil</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <Script src="length_converter.js"></Script>
+</body>
+</html>

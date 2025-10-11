@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Volume Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial volume units easily - liters, cubic meters, gallons, milliliters, and more." />
+    <meta name="keywords" content="volume converter, unit converter, metric to imperial, liters to gallons, cubic meters to cubic feet" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="volume_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Volume Converter</h1>
+            <p>Convert between metric and imperial volume units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic meter</div>
+                        <input type="number" class="unit-input" id="cubic_meter" placeholder="Enter number">
+                        <div class="unit-symbol">m³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic centimeter</div>
+                        <input type="number" class="unit-input" id="cubic_centimeter" placeholder="Enter number">
+                        <div class="unit-symbol">cm³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic millimeter</div>
+                        <input type="number" class="unit-input" id="cubic_millimeter" placeholder="Enter number">
+                        <div class="unit-symbol">mm³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kiloliter</div>
+                        <input type="number" class="unit-input" id="kiloliter" placeholder="Enter number">
+                        <div class="unit-symbol">kL</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Liter</div>
+                        <input type="number" class="unit-input" id="liter" placeholder="Enter number">
+                        <div class="unit-symbol">L</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Milliliter</div>
+                        <input type="number" class="unit-input" id="milliliter" placeholder="Enter number">
+                        <div class="unit-symbol">mL</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic yard</div>
+                        <input type="number" class="unit-input" id="cubic_yard" placeholder="Enter number">
+                        <div class="unit-symbol">yd³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic foot</div>
+                        <input type="number" class="unit-input" id="cubic_foot" placeholder="Enter number">
+                        <div class="unit-symbol">ft³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Cubic inch</div>
+                        <input type="number" class="unit-input" id="cubic_inch" placeholder="Enter number">
+                        <div class="unit-symbol">in³</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Gallon (UK)</div>
+                        <input type="number" class="unit-input" id="gallon_uk" placeholder="Enter number">
+                        <div class="unit-symbol">gal</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Gallon (US)</div>
+                        <input type="number" class="unit-input" id="gallon_us" placeholder="Enter number">
+                        <div class="unit-symbol">gal (US)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Volume Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 cubic meter = 1 kiloliter = 1000 liters</div>
+                        <div class="example-item">1 m³ = 1 kL = 1000 L</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 cubic yard = 27 cubic feet = 168.18 gallons (UK)</div>
+                        <div class="example-item">1 yd³ = 27 ft³ = 168.18 gal (UK)</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 liter = 1000 milliliters = 1000 cubic centimeters</div>
+                        <div class="example-item">1 L = 1000 mL = 1000 cm³</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 cubic foot = 1728 cubic inches = 6.23 gallons (UK)</div>
+                        <div class="example-item">1 ft³ = 1728 in³ = 6.23 gal (UK)</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 cubic meter = 35.31 cubic feet = 220.0 gallons (UK)</div>
+                        <div class="example-item">1 m³ = 35.31 ft³ = 220.0 gal (UK)</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 gallon (UK) = 1.2 gallons (US) = 4.55 liters</div>
+                        <div class="example-item">1 gal (UK) = 1.2 gal (US) = 4.55 L</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="volume_converter.js"></script>
+</body>
+</html>

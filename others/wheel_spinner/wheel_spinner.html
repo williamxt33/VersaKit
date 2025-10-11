@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Spinner Wheel - VersaKit</title>
+    <meta name="description" content="Random name picker spinner wheel. Perfect for raffles, giveaways, decision making, and games." />
+    <meta name="keywords" content="spinner wheel, random picker, name picker, raffle wheel, decision maker, random selector" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/logo_icon.png" />
+
+    <link rel="stylesheet" href="wheel_spinner.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Spinner Wheel</h1>
+            <p>Random item picker and decision maker</p>
+        </div>
+
+        <div class="main-content">
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <h2>Spin the Wheel</h2>
+                    <div style="text-align: center; color: #6c757d; font-size: 0.95rem; margin-top: 1rem;">
+                        Press <strong>SPACE</strong> or <strong>Click the Wheel</strong> to spin
+                    </div>
+                    <div class="wheel-wrapper" onclick="spin()">
+                        <div class="pointer" id="pointer"></div>
+                        <canvas id="wheelCanvas" width="600" height="600"></canvas>
+                    </div>
+                    <div class="result-display" id="resultBox">
+                        <div class="results">
+                            <div class="result-value" id="resultValue">Click spin to start</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items-panel" id="itemPanel">
+                    <h2>Items</h2>
+                    <div class="item-input-section">
+                        <input type="text" class="item-input" id="itemInput" placeholder="Enter a item" onkeypress="if(event.key==='Enter') addItem()">
+                        <button class="add-btn" onclick="addItem()">Add</button>
+                    </div>
+                    <div class="items-list" id="itemsList"></div>
+                    <div class="item-count" id="itemCount">0/30 items</div>
+                </div>
+            </div>
+
+            <div class="suggestion-section">
+                <h3>Fun suggestion</h3>
+                <div class="suggestion-grid">
+                    <button onclick="autoAddItems('yesNo')">Yes/No</button>
+                    <button onclick="autoAddItems('dares')">Dares Questions</button>
+                    <button onclick="autoAddItems('truths')">Truth Questions</button>
+                    <button onclick="autoAddItems('neverHaveIEver')">Never Have I Ever</button>
+                    <button onclick="autoAddItems('wouldYouRather')">Would you rather</button>
+                    <button onclick="autoAddItems('moviesGenre')">Movie Genre</button>
+                    <button onclick="autoAddItems('videoGamesGenre')">Video Games Genre</button>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Spin History</h3>
+                <div class="history-list" id="historyList">
+                    <p style="text-align: center; color: #6c757d; font-style: italic; word-break: break-all;">No spins yet</p>
+                </div>
+            </div>
+
+            <div class="reference-section">
+                <h3>Wheel Spinner Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is a Wheel Spinner?</h4>
+                        <p>A wheel spinner is a random selection tool divided into equal segments, each representing a choice or prize.</p>
+                        <p><strong>Mechanism:</strong> The wheel rotates and stops randomly, determining the selected segment.</p>
+                        <p><strong>Fairness:</strong> Each segment has an equal chance of being selected, unless weighted.</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Common Uses</h4>
+                        <p><strong>Decision Making:</strong> Choosing between options or tasks.</p>
+                        <p><strong>Games:</strong> Random rewards, Truth or Dare, or quiz selections.</p>
+                        <p><strong>Classrooms:</strong> Selecting students or topics.</p>
+                        <p><strong>Events:</strong> Prize wheels, raffles, and giveaways.</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Interesting Facts</h4>
+                        <p>• Wheel games date back to ancient fortune devices.</p>
+                        <p>• The “Wheel of Fortune” concept has existed for centuries.</p>
+                        <p>• Probability depends on the number of segments.</p>
+                        <p>• Some wheels use easing functions for realistic spinning.</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Tips & Insights</h4>
+                        <p>• More segments = lower odds for each item.</p>
+                        <p>• Ensure equal angles for fairness.</p>
+                        <p>• True randomness requires unbiased rotation logic.</p>
+                        <p>• Visual design affects perceived fairness.</p>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Preset Templates</h4>
+                        <p>The spinner includes multiple preset templates for different activities and moods:</p>
+                        <ul>
+                            <li><strong>Dares:</strong> Fun and bold challenges for parties or games.</li>
+                            <li><strong>Truth:</strong> Revealing questions to get to know each other better.</li>
+                            <li><strong>Would You Rather:</strong> Classic dilemma questions that spark conversations.</li>
+                            <li><strong>Never Have I Ever:</strong> Confession-based questions perfect for groups.</li>
+                            <li><strong>Movie Genre:</strong> Randomly select movie categories for movie nights.</li>
+                            <li><strong>Video Game Genre:</strong> Pick a random gaming style for your next play session.</li>
+                        </ul>
+                        <p>You can easily switch between templates or create your own custom wheel list. 
+                        Each template automatically fills the wheel with relevant items for instant play.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="wheel_spinner.js"></script>
+</body>
+</html>

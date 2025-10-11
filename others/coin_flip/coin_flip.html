@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>3D Coin Flipper - VersaKit</title>
+    <meta name="description" content="Flip a realistic 3D coin with physics simulation. Track your flip history and statistics." />
+    <meta name="keywords" content="coin flip, coin toss, heads or tails, 3D coin, random coin flip, decision maker" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="coin_flip.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Coin Flipper</h1>
+            <p>Flip a realistic 3D coin and track your statistics</p>
+        </div>
+
+        <div class="main-content">
+            <div class="coin-container" id="flipButton" onclick="flipCoin()">
+                <h2 style="margin-bottom: 1.5rem; color: #495057;">Flip the Coin</h2>
+                <div class="coin-display">
+                    <div class="coin" id="coin">
+                        <div class="coin-face coin-heads">Head</div>
+                        <div class="coin-face coin-tails">Tail</div>
+                    </div>
+                </div>
+                <div class="result-display" id="resultDisplay">Click or press space to start!</div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <h2>Flip Options</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="flipCount">Number of Flips</label>
+                        <select class="select-input" id="flipCount">
+                            <option value="1">1 Flip</option>
+                            <option value="5">5 Flips</option>
+                            <option value="10">10 Flips</option>
+                            <option value="25">25 Flips</option>
+                            <option value="50">50 Flips</option>
+                            <option value="100">100 Flips</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="animSpeed">Animation Speed</label>
+                        <select class="select-input" id="animSpeed">
+                            <option value="3000">Slow (3s)</option>
+                            <option value="2000" selected>Normal (2s)</option>
+                            <option value="1000">Fast (1.5s)</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="coinStyle">Coin Style</label>
+                        <select class="select-input" id="coinStyle" onchange="applyCoinStyle()">
+                            <option value="classic">Classic Gold/Silver</option>
+                            <option value="modern">Modern Blue/Red</option>
+                            <option value="dark">Dark Theme</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h2>Quick Stats</h2>
+                    
+                    <div class="unit-row">
+                        <span class="input-label">Total Flips</span>
+                        <span class="text-input" style="text-align: center; font-weight: 600; color: #007bff;" id="totalFlips">0</span>
+                    </div>
+
+                    <div class="unit-row">
+                        <span class="input-label">Heads Count</span>
+                        <span class="text-input" style="text-align: center; font-weight: 600; color: #ffc107;" id="headsCount">0</span>
+                    </div>
+
+                    <div class="unit-row">
+                        <span class="input-label">Tails Count</span>
+                        <span class="text-input" style="text-align: center; font-weight: 600; color: #6c757d;" id="tailsCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculate-section">
+                <button class="clear-button" onclick="clearStats()">Clear Stats</button>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <h3>Statistics</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Total Flips</div>
+                        <div class="result-value highlight" id="statTotal">0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Heads Percentage</div>
+                        <div class="result-value" id="headsPercent">0%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Tails Percentage</div>
+                        <div class="result-value" id="tailsPercent">0%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Current Streak</div>
+                        <div class="result-value" id="currentStreak">-</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Results Distribution</div>
+                    <div class="pie-chart">
+                        <div class="pie-visual" id="pieChart"></div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ffc107;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Heads</span>
+                                    <span class="legend-amount" id="headsLegend">0 flips</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #6c757d;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Tails</span>
+                                    <span class="legend-amount" id="tailsLegend">0 flips</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table" id="historySection">
+                <h3>Recent Flips History (Last 10)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Result</th>
+                            <th>Time</th>
+                            <th>Running Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #6c757d;">No flips yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-section">
+                <h3>Coin Flip Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is a Coin Flip?</h4>
+                        <p>A coin flip is a simple random event with two equally likely outcomes: heads or tails.</p>
+                        <p><strong>Probability:</strong> Each flip has exactly 50% chance for heads and 50% for tails</p>
+                        <p><strong>Independence:</strong> Each flip is independent - previous results don't affect future flips</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Common Uses</h4>
+                        <p><strong>Decision Making:</strong> Simple yes/no choices</p>
+                        <p><strong>Sports:</strong> Starting possession in games</p>
+                        <p><strong>Games:</strong> Random selection or turn order</p>
+                        <p><strong>Probability:</strong> Teaching basic statistics</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Interesting Facts</h4>
+                        <p>• The longest recorded streak is 76 consecutive heads</p>
+                        <p>• Flipping 10 heads in a row has 0.098% probability</p>
+                        <p>• Law of Large Numbers: More flips = closer to 50/50</p>
+                        <p>• Coin flips are used in cryptography</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Statistics Tips</h4>
+                        <p>• Small samples can show extreme results</p>
+                        <p>• 100+ flips typically show 45-55% split</p>
+                        <p>• Streaks are normal in random events</p>
+                        <p>• Past results don't predict future flips</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="coin_flip.js"></script>
+</html>

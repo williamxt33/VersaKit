@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Power Converter - VersaKit</title>
+    <meta name="description" content="Convert between different power units easily - Watt, Kilowatt, HP, PS, kcal/h, BTU/h, and more." />
+    <meta name="keywords" content="power converter, unit converter, watt, kilowatt, HP, PS, kcal/h, BTU/h" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="power_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Power Converter</h1>
+            <p>Convert between different power units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Watt (W)</div>
+                        <input type="number" class="unit-input" id="watt" placeholder="Enter number">
+                        <div class="unit-symbol">W</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilowatt (kW)</div>
+                        <input type="number" class="unit-input" id="kilowatt" placeholder="Enter number">
+                        <div class="unit-symbol">kW</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Metric horsepower (PS)</div>
+                        <input type="number" class="unit-input" id="ps" placeholder="Enter number">
+                        <div class="unit-symbol">PS</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Imperial horsepower (HP)</div>
+                        <input type="number" class="unit-input" id="hp" placeholder="Enter number">
+                        <div class="unit-symbol">HP</div>
+                    </div>
+                </div>
+
+                <!-- Heat Power -->
+                <div class="unit-group">
+                    <h2>Heat Power</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilocalorie per hour (kcal/h)</div>
+                        <input type="number" class="unit-input" id="kcal_h" placeholder="Enter number">
+                        <div class="unit-symbol">kcal/h</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">British thermal unit per hour (BTU/h)</div>
+                        <input type="number" class="unit-input" id="btu_h" placeholder="Enter number">
+                        <div class="unit-symbol">BTU/h</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="conversion-info">
+                <h3>Power Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 kW = 1.34 HP = 1.36 PS</div>
+                        <div class="example-item">1 kW = 3412 BTU/h = 860 kcal/h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="power_converter.js"></script>
+</body>
+</html>

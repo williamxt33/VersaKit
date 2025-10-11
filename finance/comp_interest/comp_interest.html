@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Compound Interest Calculator - VersaKit</title>
+    <meta name="description" content="Calculate compound interest with various compounding frequencies. Perfect for investment planning and savings growth." />
+    <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, interest growth, financial planning" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="comp_interest.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Compound Interest Calculator</h1>
+            <p>Calculate investment growth with compound interest</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Initial Investment</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="principal">Principal Amount</label>
+                        <input type="number" class="unit-input" id="principal" value="10000" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="rate">Annual Interest Rate (%)</label>
+                        <input type="number" class="unit-input" id="rate" value="5" min="0" max="100" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="time">Time Period (Years)</label>
+                        <input type="number" class="unit-input" id="time" value="10" min="1" max="100" step="1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="compound">Compound Frequency</label>
+                        <select class="select-input" id="compound">
+                            <option value="1">Annually</option>
+                            <option value="2">Semi-Annually</option>
+                            <option value="4">Quarterly</option>
+                            <option value="12" selected>Monthly</option>
+                            <option value="52">Weekly</option>
+                            <option value="365">Daily</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Additional Contributions</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="contribution">Regular Contribution</label>
+                        <input type="number" class="unit-input" id="contribution" value="0" min="0" step="10">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="contributionFreq">Contribution Frequency</label>
+                        <select class="select-input" id="contributionFreq">
+                            <option value="12" selected>Monthly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="2">Semi-Annually</option>
+                            <option value="1">Annually</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="contributionTiming">Contribution Timing</label>
+                        <select class="select-input" id="contributionTiming">
+                            <option value="end" selected>End of Period</option>
+                            <option value="start">Start of Period</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="inflationRate">Inflation Rate (%)</label>
+                        <input type="number" class="unit-input" id="inflationRate" value="2" min="0" max="20" step="0.1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="generate-section">
+                <button class="generate-button" onclick="calculateCompoundInterest()">Calculate Growth</button>
+                <button class="clear-button" onclick="clearResults()">Clear All</button>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <h3>Investment Summary</h3>
+                
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="statFinalAmount">$0</div>
+                            <div class="stat-label">Final Amount</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statTotalContributions">$0</div>
+                            <div class="stat-label">Total Contributions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statTotalInterest">$0</div>
+                            <div class="stat-label">Total Interest Earned</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statRealValue">$0</div>
+                            <div class="stat-label">Real Value (Inflation Adjusted)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="chart-title">Growth Breakdown</div>
+                    <div class="chart-bars">
+                        <div class="chart-bar-item">
+                            <div class="chart-label">Principal</div>
+                            <div class="chart-bar-container">
+                                <div class="chart-bar-fill chart-bar-principal" id="barPrincipal"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-item">
+                            <div class="chart-label">Interest Earned</div>
+                            <div class="chart-bar-container">
+                                <div class="chart-bar-fill chart-bar-interest" id="barInterest"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breakdown-section">
+                    <div class="breakdown-title">Year-by-Year Breakdown</div>
+                    <div style="overflow-x: auto;">
+                        <table class="breakdown-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Starting Balance</th>
+                                    <th>Contributions</th>
+                                    <th>Interest Earned</th>
+                                    <th>Ending Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="breakdownBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Compound Interest Information</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <h4>What is Compound Interest?</h4>
+                        <p>Compound interest is interest calculated on both the initial principal and accumulated interest from previous periods.</p>
+                        <p><strong>Formula:</strong> A = P(1 + r/n)^(nt)</p>
+                        <p>Where A = final amount, P = principal, r = rate, n = compounds per year, t = time in years</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Compounding Frequencies</h4>
+                        <p><strong>Annually:</strong> Interest compounds once per year</p>
+                        <p><strong>Quarterly:</strong> Interest compounds 4 times per year</p>
+                        <p><strong>Monthly:</strong> Interest compounds 12 times per year</p>
+                        <p><strong>Daily:</strong> Interest compounds 365 times per year</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Regular Contributions</h4>
+                        <p>Adding regular contributions significantly boosts growth over time through dollar-cost averaging.</p>
+                        <p><strong>Start of Period:</strong> Contributions earn interest for the full period</p>
+                        <p><strong>End of Period:</strong> Contributions are added at period end</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Investment Tips</h4>
+                        <p>• Start investing early to maximize compound growth</p>
+                        <p>• Regular contributions accelerate wealth building</p>
+                        <p>• Higher compounding frequency increases returns</p>
+                        <p>• Consider inflation when planning long-term goals</p>
+                        <p>• Reinvest dividends and interest for optimal growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="comp_interest.js"></script>
+</body>
+</html>

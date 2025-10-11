@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weight Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial Weight units easily - meters, centimeters, millimeters, feet, inches, yards, and more." />
+    <meta name="keywords" content="Weight converter, unit converter, metric to imperial, feet to meters, inches to cm, measurement converter" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="Weight_converter.css">
+
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Weight Converter</h1>
+            <p>Convert between metric and imperial Weight units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Gram</div>
+                        <input type="number" class="unit-input" id="gram" placeholder="Enter number">
+                        <div class="unit-symbol">g</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram</div>
+                        <input type="number" class="unit-input" id="kilogram" placeholder="Enter number">
+                        <div class="unit-symbol">kg</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Metric ton, Tonne</div>
+                        <input type="number" class="unit-input" id="tonne" placeholder="Enter number">
+                        <div class="unit-symbol">tonne</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Ounce</div>
+                        <input type="number" class="unit-input" id="ounce" placeholder="Enter number">
+                        <div class="unit-symbol">oz</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Pound</div>
+                        <input type="number" class="unit-input" id="pound" placeholder="Enter number">
+                        <div class="unit-symbol">lb</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">British ton, Long ton</div>
+                        <input type="number" class="unit-input" id="uk_ton" placeholder="Enter number">
+                        <div class="unit-symbol">UK ton</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">American ton, Short ton</div>
+                        <input type="number" class="unit-input" id="us_ton" placeholder="Enter number">
+                        <div class="unit-symbol">US ton</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Weight Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 kilogram = 1000 grams = 35.27 ounces = 2.20 pounds</div>
+                        <div class="example-item">1 kg = 1000 g = 35.27 oz = 2.20 lb</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 tonne = 0.98 UK ton = 1.10 US ton</div>
+                        <div class="example-item">1 metric ton = 0.98 UK ton = 1.10 US ton</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 pound = 16 ounces = 0.45 kilograms = 453.59 grams</div>
+                        <div class="example-item">1 lb = 16 oz = 0.45 kg = 453.59 g</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 US ton = 2000 pounds = 0.89 UK ton = 0.91 metric ton</div>
+                        <div class="example-item">1 US ton = 2000 lb = 0.89 UK ton = 0.91 tonne</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <Script src="weight_converter.js"></Script>
+</body>
+</html>

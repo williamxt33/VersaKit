@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Force Converter - VersaKit</title>
+    <meta name="description" content="Convert between different force units easily - Newton, Kilogram-force, Pound-force, and more." />
+    <meta name="keywords" content="force converter, unit converter, Newton, Kilogram-force, Pound-force" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="force_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Force Converter</h1>
+            <p>Convert between different force units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Gram-force</div>
+                        <input type="number" class="unit-input" id="gf" placeholder="Enter number">
+                        <div class="unit-symbol">gf</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram-force</div>
+                        <input type="number" class="unit-input" id="kgf" placeholder="Enter number">
+                        <div class="unit-symbol">kgf</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Pound-force</div>
+                        <input type="number" class="unit-input" id="lbf" placeholder="Enter number">
+                        <div class="unit-symbol">lbf</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilopound-force</div>
+                        <input type="number" class="unit-input" id="kipf" placeholder="Enter number">
+                        <div class="unit-symbol">kipf</div>
+                    </div>
+                </div>
+
+                <!-- SI Units -->
+                <div class="unit-group">
+                    <h2>S.I. Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Newton</div>
+                        <input type="number" class="unit-input" id="n" placeholder="Enter number">
+                        <div class="unit-symbol">N</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilonewton</div>
+                        <input type="number" class="unit-input" id="kn" placeholder="Enter number">
+                        <div class="unit-symbol">kN</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Force Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 kgf = 2.20 lbf = 9.81 N</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 kipf = 453.60 kgf = 4.45 kN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="force_converter.js"></script>
+</body>
+</html>

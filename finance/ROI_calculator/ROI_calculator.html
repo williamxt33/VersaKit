@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ROI Calculator - VersaKit</title>
+    <meta name="description" content="Calculate return on investment, profit margins, and investment performance metrics." />
+    <meta name="keywords" content="ROI calculator, return on investment, profit calculator, investment calculator, ROI analysis" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="roi_calculator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>ROI Calculator</h1>
+            <p>Calculate your return on investment and analyze profitability</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <h2>Investment Details</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="initialInvestment">Initial Investment</label>
+                        <input type="number" class="text-input" id="initialInvestment" value="10000" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="finalValue">Final Value</label>
+                        <input type="number" class="text-input" id="finalValue" value="15000" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="investmentPeriod">Investment Period (Years)</label>
+                        <input type="number" class="text-input" id="investmentPeriod" value="3" min="0" step="0.5">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="additionalCosts">Additional Costs</label>
+                        <input type="number" class="text-input" id="additionalCosts" value="0" min="0" step="100">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h2>Additional Returns</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="dividends">Dividends/Income</label>
+                        <input type="number" class="text-input" id="dividends" value="0" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="taxRate">Tax Rate (%)</label>
+                        <input type="number" class="text-input" id="taxRate" value="0" min="0" max="100" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="inflationRate">Inflation Rate (%)</label>
+                        <input type="number" class="text-input" id="inflationRate" value="2.5" min="0" max="20" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="calculationType">Calculation Type</label>
+                        <select class="select-input" id="calculationType">
+                            <option value="simple">Simple ROI</option>
+                            <option value="annualized">Annualized ROI</option>
+                            <option value="real">Real ROI (Inflation-Adjusted)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculate-section">
+                <button class="calculate-button" onclick="calculateROI()">Calculate ROI</button>
+                <button class="clear-button" onclick="clearForm()">Clear</button>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <h3>Investment Results</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Total Return</div>
+                        <div class="result-value highlight" id="totalReturn">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Net Profit</div>
+                        <div class="result-value" id="netProfit">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">ROI Percentage</div>
+                        <div class="result-value" id="roiPercentage">0%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Annualized ROI</div>
+                        <div class="result-value" id="annualizedROI">0%</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Investment Breakdown</div>
+                    <div class="pie-chart">
+                        <div class="pie-visual" id="pieChart"></div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #007bff;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Initial Investment</span>
+                                    <span class="legend-amount" id="investmentAmount">$0</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #28a745;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Profit/Gain</span>
+                                    <span class="legend-amount" id="profitAmount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table" id="comparisonSection">
+                <h3>Investment Scenarios</h3>
+                <table id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Period (Years)</th>
+                            <th>Investment Value</th>
+                            <th>ROI</th>
+                            <th>Annual Return</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-section">
+                <h3>ROI Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is ROI?</h4>
+                        <p>Return on Investment (ROI) measures the profitability of an investment relative to its cost.</p>
+                        <p><strong>Simple ROI:</strong> (Final Value - Initial Investment) / Initial Investment × 100</p>
+                        <p><strong>Annualized ROI:</strong> Takes into account the time period of the investment</p>
+                        <p><strong>Real ROI:</strong> Adjusts for inflation to show true purchasing power gains</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>ROI Benchmarks</h4>
+                        <p><strong>Excellent:</strong> 20%+ annual return</p>
+                        <p><strong>Good:</strong> 10-20% annual return</p>
+                        <p><strong>Average:</strong> 5-10% annual return (stock market average ~10%)</p>
+                        <p><strong>Below Average:</strong> Less than 5% annual return</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Types of Investments</h4>
+                        <p><strong>Stocks:</strong> Historically 10% average annual return</p>
+                        <p><strong>Bonds:</strong> Typically 3-5% annual return</p>
+                        <p><strong>Real Estate:</strong> 8-12% average annual return</p>
+                        <p><strong>Savings Accounts:</strong> 0.5-2% annual return</p>
+                        <p><strong>High-Yield Savings:</strong> 4-5% annual return</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Investment Tips</h4>
+                        <p>• Diversify your investment portfolio</p>
+                        <p>• Consider the time value of money</p>
+                        <p>• Factor in all costs and fees</p>
+                        <p>• Account for taxes and inflation</p>
+                        <p>• Compare ROI against market benchmarks</p>
+                        <p>• Review and rebalance regularly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="roi_calculator.js"></script>
+</body>
+</html>

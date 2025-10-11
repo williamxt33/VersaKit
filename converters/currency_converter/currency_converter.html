@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Currency Converter - VersaKit</title>
+    <meta name="description" content="Convert currencies in real-time with current exchange rates. Support for 150+ currencies worldwide." />
+    <meta name="keywords" content="currency converter, exchange rate, real time currency, money converter, forex rates" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="currency_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Currency Converter</h1>
+            <p>Real-time exchange rates for 150+ currencies</p>
+        </div>
+
+        <div class="main-content">
+            <div class="converter-section">
+                <div class="converter-row">
+                    <!-- From Currency -->
+                    <div class="currency-input-group">
+                        <div class="currency-label">
+                            <span>From source currency</span>
+                        </div>
+                        <div class="currency-selector">
+                            <div class="currency-button" id="fromCurrencyContainer">
+                                <div class="currency-info">
+                                    <img class="currency-flag" id="fromFlag" src="https://flagsapi.com/US/flat/64.png" alt="USD">
+                                    <span class="currency-code" id="fromCurrencyBtn">USD</span>
+                                </div>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <ul class="currency-list" id="fromCurrencyList"></ul>
+                        </div>
+                        <input type="number" class="currency-input" id="input" placeholder="1.00" min="0" step="0.01">
+                    </div>
+
+                    <!-- Exchange Button -->
+                    <button class="exchange-button" id="exchangeIcon">⇄</button>
+
+                    <!-- To Currency -->
+                    <div class="currency-input-group">
+                        <div class="currency-label">
+                            <span>To target currency</span>
+                        </div>
+                        <div class="currency-selector">
+                            <div class="currency-button" id="toCurrencyContainer">
+                                <div class="currency-info">
+                                    <img class="currency-flag" id="toFlag" src="https://flagsapi.com/NP/flat/64.png" alt="NPR">
+                                    <span class="currency-code" id="toCurrencyBtn">NPR</span>
+                                </div>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <ul class="currency-list" id="toCurrencyList"></ul>
+                        </div>
+                        <input type="text" class="currency-input" id="output" placeholder="0.00" readonly>
+                    </div>
+                </div>
+
+                <div class="convert-section">
+                    <button class="convert-button" id="btn">Convert Currency</button>
+                </div>
+            </div>
+
+            <div class="rate-info" id="rateInfo" style="display: none;">
+                <div class="rate-display">Current Exchange Rate</div>
+                <div class="rate-value" id="currentRate">1 USD = 0.00 NPR</div>
+            </div>
+
+            <div class="popular-currencies">
+                <h3>Popular Currencies</h3>
+                <div class="popular-grid">
+                    <div class="popular-item" onclick="setCurrency('USD', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/US/flat/64.png" alt="USD">
+                        <span class="popular-code">USD</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('EUR', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/EU/flat/64.png" alt="EUR">
+                        <span class="popular-code">EUR</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('GBP', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/GB/flat/64.png" alt="GBP">
+                        <span class="popular-code">GBP</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('JPY', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/JP/flat/64.png" alt="JPY">
+                        <span class="popular-code">JPY</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('CNY', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/CN/flat/64.png" alt="CNY">
+                        <span class="popular-code">CNY</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('AUD', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/AU/flat/64.png" alt="AUD">
+                        <span class="popular-code">AUD</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('CAD', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/CA/flat/64.png" alt="CAD">
+                        <span class="popular-code">CAD</span>
+                    </div>
+                    <div class="popular-item" onclick="setCurrency('CHF', 'from')">
+                        <img class="popular-flag" src="https://flagsapi.com/CH/flat/64.png" alt="CHF">
+                        <span class="popular-code">CHF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="currency_converter.js"></script>
+</body>
+</html>

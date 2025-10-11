@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Viscosity Converter - VersaKit</title>
+    <meta name="description" content="Convert between different viscosity units easily - mPa·s, Pa·s, cP, P, kg/(m·s), g/(cm·s), N·s/m², kgf·s/cm², lbf·s/ft², lbf·s/in²" />
+    <meta name="keywords" content="viscosity converter, unit converter, mPa·s, Pa·s, cP, P, kg/(m·s), g/(cm·s), N·s/m², kgf·s/cm², lbf·s/ft², lbf·s/in²" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="viscosity_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Viscosity Converter</h1>
+            <p>Convert between different viscosity units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Millipascal second (mPa·s)</div>
+                        <input type="number" class="unit-input" id="mpa_s" placeholder="Enter number">
+                        <div class="unit-symbol">mPa·s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Pascal second (Pa·s)</div>
+                        <input type="number" class="unit-input" id="pa_s" placeholder="Enter number">
+                        <div class="unit-symbol">Pa·s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Centipoise (cP)</div>
+                        <input type="number" class="unit-input" id="cp" placeholder="Enter number">
+                        <div class="unit-symbol">cP</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Poise (P)</div>
+                        <input type="number" class="unit-input" id="p" placeholder="Enter number">
+                        <div class="unit-symbol">P</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram per meter second (kg/(m·s))</div>
+                        <input type="number" class="unit-input" id="kg_m_s" placeholder="Enter number">
+                        <div class="unit-symbol">kg/(m·s)</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Gram per centimeter second (g/(cm·s))</div>
+                        <input type="number" class="unit-input" id="g_cm_s" placeholder="Enter number">
+                        <div class="unit-symbol">g/(cm·s)</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Newton second per square meter (N·s/m²)</div>
+                        <input type="number" class="unit-input" id="ns_m2" placeholder="Enter number">
+                        <div class="unit-symbol">N·s/m²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram-force second per square centimeter (kgf·s/cm²)</div>
+                        <input type="number" class="unit-input" id="kgf_s_cm2" placeholder="Enter number">
+                        <div class="unit-symbol">kgf·s/cm²</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Pound-force second per square foot (lbf·s/ft²)</div>
+                        <input type="number" class="unit-input" id="lbf_s_ft2" placeholder="Enter number">
+                        <div class="unit-symbol">lbf·s/ft²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Pound-force second per square inch (lbf·s/in²)</div>
+                        <input type="number" class="unit-input" id="lbf_s_in2" placeholder="Enter number">
+                        <div class="unit-symbol">lbf·s/in²</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="conversion-info">
+                <h3>Viscosity Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 Pa·s = 1000 mPa·s = 10 P = 1000 cP</div>
+                        <div class="example-item">1 kg/(m·s) = 1 Pa·s, 1 g/(cm·s) = 0.1 Pa·s</div>
+                        <div class="example-item">1 kgf·s/cm² = 98066.5 Pa·s</div>
+                        <div class="example-item">1 lbf·s/ft² = 47.8803 Pa·s, 1 lbf·s/in² = 6894.76 Pa·s</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="viscosity_converter.js"></script>
+</body>
+</html>

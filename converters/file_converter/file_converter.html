@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>File Type Converter - VersaKit</title>
+    <meta name="description" content="Convert files between different formats including images, documents, and more." />
+    <meta name="keywords" content="file converter, image converter, document converter, format converter, file conversion" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="file_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>File Type Converter</h1>
+            <p>Convert your files between different formats quickly and easily</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <h2>Upload File</h2>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📁</div>
+                        <p class="upload-text">Drag & drop your file here</p>
+                        <p class="upload-subtext">or click to browse</p>
+                        <input type="file" id="fileInput" class="file-input" accept="image/*,.pdf,.doc,.docx,.txt,.csv,.xlsx,.xls,.json">
+                    </div>
+
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="info-row">
+                            <span class="info-label">File Name:</span>
+                            <span class="info-value" id="fileName">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">File Size:</span>
+                            <span class="info-value" id="fileSize">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">File Type:</span>
+                            <span class="info-value" id="fileType">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h2>Conversion Options</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="conversionType">Conversion Category</label>
+                        <select class="select-input" id="conversionType">
+                            <option value="">Select category</option>
+                            <option value="image">Image Conversion</option>
+                            <option value="text">Text/Data Conversion</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="outputFormat">Output Format</label>
+                        <select class="select-input" id="outputFormat">
+                            <option value="">Select format</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row" id="qualityRow" style="display: none;">
+                        <label class="input-label" for="quality">Quality</label>
+                        <select class="select-input" id="quality">
+                            <option value="high">High (Best Quality)</option>
+                            <option value="medium" selected>Medium (Balanced)</option>
+                            <option value="low">Low (Smaller Size)</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row" id="resizeRow" style="display: none;">
+                        <label class="input-label" for="resize">Resize Image</label>
+                        <select class="select-input" id="resize">
+                            <option value="original">Original Size</option>
+                            <option value="50">50%</option>
+                            <option value="75">75%</option>
+                            <option value="125">125%</option>
+                            <option value="150">150%</option>
+                            <option value="200">200%</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculate-section">
+                <button class="calculate-button" onclick="convertFile()">Convert File</button>
+                <button class="clear-button" onclick="clearForm()">Clear</button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>Conversion Results</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Original Size</div>
+                        <div class="result-value" id="originalSize">0 KB</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Converted Size</div>
+                        <div class="result-value highlight" id="convertedSize">0 KB</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Size Change</div>
+                        <div class="result-value" id="sizeChange">0%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Status</div>
+                        <div class="result-value" id="conversionStatus">Ready</div>
+                    </div>
+                </div>
+
+                <div class="preview-container">
+                    <div class="preview-title">Preview</div>
+                    <div class="preview-area" id="previewArea">
+                        <p class="preview-text">Preview will appear here after conversion</p>
+                    </div>
+                    <button class="download-button" id="downloadButton" style="display: none;" onclick="downloadFile()">
+                        📥 Download Converted File
+                    </button>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <h3>Supported Formats</h3>
+                <table id="formatsTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Input Formats</th>
+                            <th>Output Formats</th>
+                            <th>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Images</strong></td>
+                            <td>JPG, PNG, GIF, BMP, WebP</td>
+                            <td>JPG, PNG, WebP</td>
+                            <td>Quality control, Resize</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Text/Data</strong></td>
+                            <td>TXT, CSV, JSON</td>
+                            <td>TXT, CSV, JSON</td>
+                            <td>Format conversion, Data parsing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-section">
+                <h3>File Conversion Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>Image Formats</h4>
+                        <p><strong>JPG/JPEG:</strong> Best for photos, supports compression, smaller file size</p>
+                        <p><strong>PNG:</strong> Supports transparency, lossless compression, better for graphics</p>
+                        <p><strong>WebP:</strong> Modern format, excellent compression, smaller than JPG and PNG</p>
+                        <p><strong>GIF:</strong> Supports animation, limited colors (256), larger file size</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Text & Data Formats</h4>
+                        <p><strong>TXT:</strong> Plain text, universal compatibility, no formatting</p>
+                        <p><strong>CSV:</strong> Comma-separated values, ideal for spreadsheet data and tabular information</p>
+                        <p><strong>JSON:</strong> JavaScript Object Notation, structured data format, widely used in APIs</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Conversion Tips</h4>
+                        <p>• Choose the right format for your needs</p>
+                        <p>• Higher quality = larger file size</p>
+                        <p>• Use WebP for web images (smaller & faster)</p>
+                        <p>• PNG for images with transparency</p>
+                        <p>• JPG for photographs and complex images</p>
+                        <p>• CSV for spreadsheet-compatible data</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>File Size Guidelines</h4>
+                        <p><strong>Web Images:</strong> Aim for under 200KB for fast loading</p>
+                        <p><strong>Print Images:</strong> Keep high quality, 300 DPI recommended</p>
+                        <p><strong>Email Attachments:</strong> Most email providers limit to 25MB</p>
+                        <p><strong>Social Media:</strong> Each platform has specific size limits</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="file_converter.js"></script>
+</body>
+</html>

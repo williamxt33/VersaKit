@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Age Converter - VersaKit</title>
+    <meta name="description" content="Calculate your exact age in years, months, days, hours, minutes, and seconds from your birth date." />
+    <meta name="keywords" content="age calculator, age converter, birth date calculator, years months days, time calculator" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="age_converter.css">
+
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Age Converter</h1>
+            <p>Calculate your exact age from your birth date</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Enter Your Birth Date</h2>
+                <div class="date-input-group">
+                    <input type="date" class="date-input" id="birthDate" max="">
+                </div>
+                <button class="calculate-button" onclick="calculateAge()">Calculate Age</button>
+            </div>
+
+            <div id="results" class="hidden">
+                <div class="results-section">
+                    <!-- Detailed Time Units -->
+                    <div class="result-group">
+                        <h3>Detailed Age Breakdown</h3>
+                        
+                        <div class="result-row">
+                            <div class="result-label">Years</div>
+                            <div class="result-unit">yrs</div>
+                            <div class="result-value" id="years">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Months</div>
+                            <div class="result-unit">mos</div>
+                            <div class="result-value" id="months">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Days</div>
+                            <div class="result-unit">days</div>
+                            <div class="result-value" id="days">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Hours</div>
+                            <div class="result-unit">hrs</div>
+                            <div class="result-value" id="hours">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Minutes</div>
+                            <div class="result-unit">min</div>
+                            <div class="result-value" id="minutes">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Seconds</div>
+                            <div class="result-unit">sec</div>
+                            <div class="result-value" id="seconds">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Total Units -->
+                    <div class="result-group">
+                        <h3>Total Time Lived</h3>
+                        
+                        <div class="result-row">
+                            <div class="result-label">Total Days</div>
+                            <div class="result-unit">days</div>
+                            <div class="result-value" id="totalDays">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Total Hours</div>
+                            <div class="result-unit">hrs</div>
+                            <div class="result-value" id="totalHours">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Total Minutes</div>
+                            <div class="result-unit">min</div>
+                            <div class="result-value" id="totalMinutes">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Total Seconds</div>
+                            <div class="result-unit">sec</div>
+                            <div class="result-value" id="totalSeconds">0</div>
+                        </div>
+
+                        <div class="result-row">
+                            <div class="result-label">Heartbeats</div>
+                            <div class="result-unit">beats</div>
+                            <div class="result-value" id="heartbeats">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Age Summary</h3>
+                    <div class="age-summary" id="ageSummary">
+                        Select your birth date to see your age calculation
+                    </div>
+                </div>
+
+                <div class="milestone-section">
+                    <h3>Fun Facts & Milestones</h3>
+                    <div class="milestone-grid" id="milestones">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="age_converter.js"></script>
+</body>
+</html>

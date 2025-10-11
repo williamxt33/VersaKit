@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Area Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial area units easily - square meters, square centimeters, hectares, acres, and more." />
+    <meta name="keywords" content="area converter, unit converter, metric to imperial, square meters to acres, hectares to acres" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="area_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Area Converter</h1>
+            <p>Convert between metric and imperial area units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Square meter</div>
+                        <input type="number" class="unit-input" id="square_meter" placeholder="Enter number">
+                        <div class="unit-symbol">m²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Square centimeter</div>
+                        <input type="number" class="unit-input" id="square_centimeter" placeholder="Enter number">
+                        <div class="unit-symbol">cm²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Square millimeter</div>
+                        <input type="number" class="unit-input" id="square_millimeter" placeholder="Enter number">
+                        <div class="unit-symbol">mm²</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Square yard</div>
+                        <input type="number" class="unit-input" id="square_yard" placeholder="Enter number">
+                        <div class="unit-symbol">yd²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Square foot</div>
+                        <input type="number" class="unit-input" id="square_foot" placeholder="Enter number">
+                        <div class="unit-symbol">ft²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Square inch</div>
+                        <input type="number" class="unit-input" id="square_inch" placeholder="Enter number">
+                        <div class="unit-symbol">in²</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Land Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Square kilometer</div>
+                        <input type="number" class="unit-input" id="square_kilometer" placeholder="Enter number">
+                        <div class="unit-symbol">km²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Hectare</div>
+                        <input type="number" class="unit-input" id="hectare" placeholder="Enter number">
+                        <div class="unit-symbol">ha</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Are</div>
+                        <input type="number" class="unit-input" id="are" placeholder="Enter number">
+                        <div class="unit-symbol">a</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Acre</div>
+                        <input type="number" class="unit-input" id="acre" placeholder="Enter number">
+                        <div class="unit-symbol">acre</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Area Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 square meter = 10,000 square centimeters</div>
+                        <div class="example-item">1 m² = 10,000 cm²</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 square yard = 9 square feet = 1296 square inches</div>
+                        <div class="example-item">1 yd² = 9 ft² = 1296 in²</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 square meter = 1.20 square yards = 10.76 square feet</div>
+                        <div class="example-item">1 m² = 1.20 yd² = 10.76 ft²</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 square foot = 0.09 square meters = 929.03 square centimeters</div>
+                        <div class="example-item">1 ft² = 0.09 m² = 929.03 cm²</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="area_converter.js"></script>
+</body>
+</html>

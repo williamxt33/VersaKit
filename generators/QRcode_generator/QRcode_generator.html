@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>QR Code Generator - VersaKit</title>
+    <meta name="description" content="Generate QR codes for text, URLs, WiFi, contact info and more. Customize size, color, and download in multiple formats." />
+    <meta name="keywords" content="QR code generator, QR maker, barcode generator, custom QR code, URL QR code" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="QRcode_generator.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>QR Code Generator</h1>
+            <p>Create customizable QR codes for any purpose</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <!-- Content Settings -->
+                <div class="input-group">
+                    <h2>Content & Data</h2>
+                    
+                    <div class="input-row">
+                        <label class="input-label" for="qrType">QR Code Type</label>
+                        <div class="input-sublabel">Choose what type of data to encode</div>
+                        <select class="select-input" id="qrType" onchange="changeQRType()">
+                            <option value="text">Plain Text</option>
+                            <option value="url">Website URL</option>
+                            <option value="wifi">WiFi Network</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone Number</option>
+                            <option value="sms">SMS Message</option>
+                            <option value="vcard">Contact Card</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row" id="textInput">
+                        <label class="input-label" for="qrContent">Content</label>
+                        <div class="input-sublabel">Enter the text or data to encode</div>
+                        <textarea class="textarea-input" id="qrContent" placeholder="Enter your text here..." rows="4"></textarea>
+                    </div>
+
+                    <!-- WiFi fields (hidden by default) -->
+                    <div class="input-row hidden" id="wifiFields">
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="wifiSSID">WiFi Network Name (SSID)</label>
+                            <input type="text" class="text-input" id="wifiSSID" placeholder="MyWiFiNetwork">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="wifiPassword">Password</label>
+                            <input type="text" class="text-input" id="wifiPassword" placeholder="password123">
+                        </div>
+                        <div>
+                            <label class="input-label" for="wifiSecurity">Security Type</label>
+                            <select class="select-input" id="wifiSecurity">
+                                <option value="WPA">WPA/WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="nopass">No Password</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Email fields -->
+                    <div class="input-row hidden" id="emailFields">
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="emailTo">Email Address</label>
+                            <input type="email" class="text-input" id="emailTo" placeholder="someone@example.com">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="emailSubject">Subject</label>
+                            <input type="text" class="text-input" id="emailSubject" placeholder="Email subject">
+                        </div>
+                        <div>
+                            <label class="input-label" for="emailBody">Message</label>
+                            <textarea class="textarea-input" id="emailBody" placeholder="Email message..." rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card fields -->
+                    <div class="input-row hidden" id="vcardFields">
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="vcardName">Full Name</label>
+                            <input type="text" class="text-input" id="vcardName" placeholder="John Doe">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="vcardPhone">Phone Number</label>
+                            <input type="text" class="text-input" id="vcardPhone" placeholder="">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label class="input-label" for="vcardEmail">Email</label>
+                            <input type="email" class="text-input" id="vcardEmail" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="input-label" for="vcardOrg">Organization</label>
+                            <input type="text" class="text-input" id="vcardOrg" placeholder="Company Name">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization Settings -->
+                <div class="input-group">
+                    <h2>Customization</h2>
+                    
+                    <div class="input-row">
+                        <label class="input-label" for="qrSize">Size (pixels)</label>
+                        <div class="input-sublabel">QR code dimensions (128-1024)</div>
+                        <input type="number" class="text-input" id="qrSize" value="256" min="128" max="1024" step="32">
+                    </div>
+
+                    <div class="input-row">
+                        <label class="input-label" for="qrLevel">Error Correction</label>
+                        <div class="input-sublabel">Higher levels can recover from more damage</div>
+                        <select class="select-input" id="qrLevel">
+                            <option value="L">Low (7%)</option>
+                            <option value="M" selected>Medium (15%)</option>
+                            <option value="Q">Quartile (25%)</option>
+                            <option value="H">High (30%)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row">
+                        <label class="input-label">Foreground Color</label>
+                        <div class="input-sublabel">QR code color (default: black)</div>
+                        <div class="color-input-wrapper">
+                            <input type="color" class="color-input" id="qrForeground" value="#000000" onchange="updateColorValue('qrForeground')">
+                            <input type="text" class="color-value" id="qrForegroundValue" value="#000000" onchange="updateColorPicker('qrForeground')">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <label class="input-label">Background Color</label>
+                        <div class="input-sublabel">Background color (default: white)</div>
+                        <div class="color-input-wrapper">
+                            <input type="color" class="color-input" id="qrBackground" value="#FFFFFF" onchange="updateColorValue('qrBackground')">
+                            <input type="text" class="color-value" id="qrBackgroundValue" value="#FFFFFF" onchange="updateColorPicker('qrBackground')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generate-section">
+                <button class="generate-button" onclick="generateQR()">Generate QR Code</button>
+                <button class="clear-button" onclick="clearQR()">Clear</button>
+            </div>
+
+            <div class="qr-display">
+                <div class="qr-canvas-container" id="qrCanvasContainer">
+                    <div class="qr-placeholder">Enter content and click "Generate QR Code" to create your QR code</div>
+                </div>
+                <div class="qr-actions">
+                    <button class="action-button" onclick="downloadQR('png')" id="downloadPNG" disabled>
+                        📥 Download PNG
+                    </button>
+                    <button class="action-button" onclick="downloadQR('jpg')" id="downloadJPG" disabled>
+                        📥 Download JPG
+                    </button>
+                    <button class="action-button" onclick="downloadQR('svg')" id="downloadSVG" disabled>
+                        📥 Download SVG
+                    </button>
+                </div>
+            </div>
+
+            <div class="presets-section">
+                <h3>Quick Presets</h3>
+                <div class="presets-grid">
+                    <div class="preset-item" onclick="loadPreset('website')">
+                        <div class="preset-icon">🌐</div>
+                        <div class="preset-title">Website URL</div>
+                        <div class="preset-desc">Link to a webpage</div>
+                    </div>
+                    <div class="preset-item" onclick="loadPreset('wifi')">
+                        <div class="preset-icon">📶</div>
+                        <div class="preset-title">WiFi Network</div>
+                        <div class="preset-desc">Share WiFi credentials</div>
+                    </div>
+                    <div class="preset-item" onclick="loadPreset('contact')">
+                        <div class="preset-icon">👤</div>
+                        <div class="preset-title">Contact Info</div>
+                        <div class="preset-desc">Share contact details</div>
+                    </div>
+                    <div class="preset-item" onclick="loadPreset('email')">
+                        <div class="preset-icon">📧</div>
+                        <div class="preset-title">Email</div>
+                        <div class="preset-desc">Pre-filled email message</div>
+                    </div>
+                    <div class="preset-item" onclick="loadPreset('phone')">
+                        <div class="preset-icon">📞</div>
+                        <div class="preset-title">Phone Number</div>
+                        <div class="preset-desc">Quick dial number</div>
+                    </div>
+                    <div class="preset-item" onclick="loadPreset('location')">
+                        <div class="preset-icon">📍</div>
+                        <div class="preset-title">Location</div>
+                        <div class="preset-desc">GPS coordinates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reference-section">
+                <h3>QR Code Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is a QR Code?</h4>
+                        <p>QR (Quick Response) codes are 2D barcodes that can store various types of data including text, URLs, contact information, and more.</p>
+                        <p><strong>Capacity:</strong> Up to 4,296 alphanumeric characters</p>
+                        <p><strong>Uses:</strong> Marketing, payments, contact sharing, WiFi access, and more</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Error Correction Levels</h4>
+                        <p><strong>Low (L):</strong> ~7% recovery - Suitable for clean environments</p>
+                        <p><strong>Medium (M):</strong> ~15% recovery - General purpose use</p>
+                        <p><strong>Quartile (Q):</strong> ~25% recovery - Industrial applications</p>
+                        <p><strong>High (H):</strong> ~30% recovery - Harsh environments</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Best Practices</h4>
+                        <p>• Use high contrast colors (dark on light background)</p>
+                        <p>• Ensure adequate size for scanning distance</p>
+                        <p>• Test QR codes before distribution</p>
+                        <p>• Consider error correction level based on use case</p>
+                        <p>• Keep content concise for better scanning</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Common Data Types</h4>
+                        <p><strong>URL:</strong> https://example.com</p>
+                        <p><strong>WiFi:</strong> WIFI:T:WPA;S:NetworkName;P:password;;</p>
+                        <p><strong>Email:</strong> mailto:user@example.com</p>
+                        <p><strong>Phone:</strong> tel:+1234567890</p>
+                        <p><strong>SMS:</strong> smsto:+1234567890:message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+    <script src="QRcode_generator.js"></script>
+</body>
+</html>

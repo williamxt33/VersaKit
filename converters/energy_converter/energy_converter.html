@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Energy Converter - VersaKit</title>
+    <meta name="description" content="Convert between different energy units easily - Joule, Kilojoule, Calorie, kWh, BTU, and more." />
+    <meta name="keywords" content="energy converter, unit converter, joule, kilojoule, calorie, kWh, BTU" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="energy_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Energy Converter</h1>
+            <p>Convert between different energy units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+
+                <!-- S.I. Units -->
+                <div class="unit-group">
+                    <h2>S.I. Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Joule (J)</div>
+                        <input type="number" class="unit-input" id="joule" placeholder="Enter number">
+                        <div class="unit-symbol">J</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilojoule (kJ)</div>
+                        <input type="number" class="unit-input" id="kilojoule" placeholder="Enter number">
+                        <div class="unit-symbol">kJ</div>
+                    </div>
+                </div>
+
+                <!-- Electrical Energy -->
+                <div class="unit-group">
+                    <h2>Electrical Energy</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilowatt-hour (kW·h)</div>
+                        <input type="number" class="unit-input" id="kwh" placeholder="Enter number">
+                        <div class="unit-symbol">kW·h</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Horsepower-hour (hp·h)</div>
+                        <input type="number" class="unit-input" id="hph" placeholder="Enter number">
+                        <div class="unit-symbol">hp·h</div>
+                    </div>
+                </div>
+
+                <!-- Heat Energy -->
+                <div class="unit-group">
+                    <h2>Heat Energy</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Calorie (cal)</div>
+                        <input type="number" class="unit-input" id="cal" placeholder="Enter number">
+                        <div class="unit-symbol">cal</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilocalorie (kcal)</div>
+                        <input type="number" class="unit-input" id="kcal" placeholder="Enter number">
+                        <div class="unit-symbol">kcal</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">British Thermal Unit (BTU)</div>
+                        <input type="number" class="unit-input" id="btu" placeholder="Enter number">
+                        <div class="unit-symbol">BTU</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Energy Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 kJ = 0.24 kcal = 0.95 BTU</div>
+                        <div class="example-item">1 kW·h = 1.34 hp·h = 3600 kJ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="energy_converter.js"></script>
+</body>
+</html>

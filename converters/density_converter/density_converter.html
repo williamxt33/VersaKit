@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Density Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial density units easily - g/cm³, kg/m³, lb/ft³, slug/ft³, and more." />
+    <meta name="keywords" content="Density converter, unit converter, metric to imperial, g/cm3 to kg/m3, lb/ft3 to g/cm3, measurement converter" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="density_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Density Converter</h1>
+            <p>Convert between metric and imperial density units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Metric Units -->
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Gram per cubic centimeter</div>
+                        <input type="number" class="unit-input" id="g_cm3" placeholder="Enter number">
+                        <div class="unit-symbol">g/cm³</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram per cubic meter</div>
+                        <input type="number" class="unit-input" id="kg_m3" placeholder="Enter number">
+                        <div class="unit-symbol">kg/m³</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Gram per milliliter</div>
+                        <input type="number" class="unit-input" id="g_ml" placeholder="Enter number">
+                        <div class="unit-symbol">g/mL</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Gram per liter</div>
+                        <input type="number" class="unit-input" id="g_L" placeholder="Enter number">
+                        <div class="unit-symbol">g/L</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram per liter</div>
+                        <input type="number" class="unit-input" id="kg_L" placeholder="Enter number">
+                        <div class="unit-symbol">kg/L</div>
+                    </div>
+                </div>
+
+                <!-- Imperial Units -->
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    
+                    <div class="unit-row">
+                        <div class="unit-label">Slug per cubic foot</div>
+                        <input type="number" class="unit-input" id="slug_ft3" placeholder="Enter number">
+                        <div class="unit-symbol">slug/ft³</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Pound per cubic foot</div>
+                        <input type="number" class="unit-input" id="lb_ft3" placeholder="Enter number">
+                        <div class="unit-symbol">lb/ft³</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Pound per gallon (UK)</div>
+                        <input type="number" class="unit-input" id="lb_gal_uk" placeholder="Enter number">
+                        <div class="unit-symbol">lb/gal</div>
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="unit-label">Pound per gallon (US)</div>
+                        <input type="number" class="unit-input" id="lb_gal_us" placeholder="Enter number">
+                        <div class="unit-symbol">lb/gal US</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Density Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 g/cm³ = 1000 kg/m³</div>
+                        <div class="example-item">1 g/cm³ = 1.94 slug/ft³</div>
+                        <div class="example-item">1 g/cm³ = 62.43 lb/ft³</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 g/mL = 1 kg/L = 10.02 lb/gal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="density_converter.js"></script>
+</body>
+</html>

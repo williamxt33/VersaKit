@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pressure Converter - VersaKit</title>
+    <meta name="description" content="Convert between different pressure units easily - Pascal, Bar, PSI, atm, and more." />
+    <meta name="keywords" content="pressure converter, unit converter, Pascal, Bar, PSI, atm" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="pressure_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Pressure Converter</h1>
+            <p>Convert between different pressure units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Pressure Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilogram-force per square centimeter</div>
+                        <input type="number" class="unit-input" id="kgf_cm2" placeholder="Enter number">
+                        <div class="unit-symbol">kgf/cm²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Newton per square meter</div>
+                        <input type="number" class="unit-input" id="n_m2" placeholder="Enter number">
+                        <div class="unit-symbol">N/m²</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Pound-force per square inch</div>
+                        <input type="number" class="unit-input" id="psi" placeholder="Enter number">
+                        <div class="unit-symbol">psi</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Pound-force per square foot</div>
+                        <input type="number" class="unit-input" id="psf" placeholder="Enter number">
+                        <div class="unit-symbol">psf</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Pascal Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Pascal</div>
+                        <input type="number" class="unit-input" id="pa" placeholder="Enter number">
+                        <div class="unit-symbol">Pa</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilopascal</div>
+                        <input type="number" class="unit-input" id="kpa" placeholder="Enter number">
+                        <div class="unit-symbol">kPa</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Megapascal</div>
+                        <input type="number" class="unit-input" id="mpa" placeholder="Enter number">
+                        <div class="unit-symbol">MPa</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Atmospheric Pressure</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Standard atmosphere</div>
+                        <input type="number" class="unit-input" id="atm" placeholder="Enter number">
+                        <div class="unit-symbol">atm</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Technical atmosphere</div>
+                        <input type="number" class="unit-input" id="at" placeholder="Enter number">
+                        <div class="unit-symbol">at</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Bar</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Bar</div>
+                        <input type="number" class="unit-input" id="bar" placeholder="Enter number">
+                        <div class="unit-symbol">bar</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Millibar</div>
+                        <input type="number" class="unit-input" id="mbar" placeholder="Enter number">
+                        <div class="unit-symbol">mbar</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Liquid Column Height</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Millimeter of water</div>
+                        <input type="number" class="unit-input" id="mmAq" placeholder="Enter number">
+                        <div class="unit-symbol">mmAq</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Inch of water</div>
+                        <input type="number" class="unit-input" id="inH2O" placeholder="Enter number">
+                        <div class="unit-symbol">inH₂O</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Millimeter of mercury</div>
+                        <input type="number" class="unit-input" id="mmHg" placeholder="Enter number">
+                        <div class="unit-symbol">mmHg</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Centimeter of mercury</div>
+                        <input type="number" class="unit-input" id="cmHg" placeholder="Enter number">
+                        <div class="unit-symbol">cmHg</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Inch of mercury</div>
+                        <input type="number" class="unit-input" id="inHg" placeholder="Enter number">
+                        <div class="unit-symbol">inHg</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Pressure Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 kgf/cm² = 14.2 psi = 0.98 bar</div>
+                        <div class="example-item">1 kgf/cm² = 0.10 MPa = 10,000 mmAq</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 bar = 0.1 MPa = 0.98 atm</div>
+                        <div class="example-item">1 MPa = 10.20 kgf/cm² = 10 bar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="pressure_converter.js"></script>
+</body>
+</html>

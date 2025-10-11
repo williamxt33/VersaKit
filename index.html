@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VersaKit</title>
+    <meta name="description" content="VersaKit offers a comprehensive collection of simple yet practical online tools including counters, dice rollers, password generators, temperature converters, and more to effortlessly handle your daily digital needs." />
+    <meta name="keywords" content="online tools, counter, dice roller, password generator, temperature converter, BMI calculator, age calculator, unit converter, web utilities, productivity tools, free online tools" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Open Graph Social Sharing -->
+    <meta property="og:title" content="VersaKit - Comprehensive Collection of Practical Online Tools" />
+    <meta property="og:description" content="Access a wide range of simple yet powerful online utilities designed to streamline your daily tasks. From counters and calculators to generators and converters - all free and easy to use." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://VersaKit.netlify.app/" />
+    <meta property="og:image" content="https://VersaKit.netlify.app/main/counter.png" />
+    <meta property="og:site_name" content="VersaKit" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VersaKit - Comprehensive Collection of Practical Online Tools" />
+    <meta name="twitter:description" content="Access a wide range of simple yet powerful online utilities designed to streamline your daily tasks. All free and easy to use." />
+    <meta name="twitter:image" content="https://VersaKit.netlify.app/main/counter.png" />
+    <meta name="twitter:creator" content="@williamyen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "VersaKit",
+      "alternateName": "VersaKit - Online Tools Collection",
+      "url": "https://VersaKit.netlify.app/",
+      "description": "A comprehensive collection of simple yet practical online tools including counters, dice rollers, password generators, temperature converters, BMI calculators, age calculators, and unit converters. All tools are free to use and designed to handle your daily digital needs efficiently.",
+      "publisher": {
+        "@type": "Person",
+        "name": "William Yen",
+        "jobTitle": "Web Developer"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://VersaKit.netlify.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://github.com/williamyen/VersaKit"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="description">
+            <h1><span>VersaKit</span>   Your All in One Online Toolkit</h1>
+            <br>
+            <p>Boost your productivity with VersaKit, the all-in-one toolkit for converters, generators, and powerful editors. 
+               Fast, reliable, and hassle-free—just open your browser and get it done.</p>
+        </div>
+
+        <div class="Search">
+            <div class="search_area">
+                <span class="search_bar">
+                    <input type="text" placeholder="Type here to search" id="search_bar" />
+                </span>
+
+                <div class="search_suggest">
+                    <button class="search_suggest_btn" onclick="window.location.href='/converters/currency_converter/currency_converter.html'">currency converter</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/finance/retirement_calculator/retirement_calculator.html'">retirement calculator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/QRcode_generator/QRcode_generator.html'">qrcode generator</button>
+                    <br>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/group_generator/group_generator.html'">group gernerator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/finance/mortgage_calculator/mortgage_calculator.html'">mortgage calculator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/password_generator/password_generator.html'">password generator</button>
+                </div>
+
+                
+
+                <div id="not_found_box">
+                    <h1 id="not_found" style="display:none;">
+                        Sorry we couldn't find any matches for
+                        <span id="not_found_highlight" style="display:none;"></span>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="labels">
+                <div class="setion" onclick="window.location.href='/all_tools/all_tools.html#converter_category'">
+                    <img src="img/loop (1).png">
+                    <h2>Converter</h2>
+                    <a href="converters/length_converter/length_converter.html">Length Converter</a>
+                    <a href="converters/morse_code_converter/morse_code_converter.html">Morse Code Converter</a>
+                    <a href="converters/temperature_converter/temperature_converter.html">Temperature Converter</a>
+                    <a href="converters/age_converter/age_converter.html">Age Converter</a>
+                    <a href="converters/currency_converter/currency_converter.html">Currency Converter</a>
+                </div>
+
+                <div class="setion" onclick="window.location.href='/all_tools/all_tools.html#generator_category'">
+                    <img src="img/creative.png">
+                    <h2>Generator</h2>
+                    <a href="generators/password_generator/password_generator.html">Password Generator</a>
+                    <a href="generators/QRcode_generator/QRcode_generator.html">QR Code Generator</a>
+                    <a href="generators/group_generator/group_generator.html">Group Generator</a>
+                </div>
+
+                <div class="setion" onclick="window.location.href='/all_tools/all_tools.html#finance_category'">
+                    <img src="img/income.png">
+                    <h2>Finance</h2>
+                    <a href="finance/mortgage_calculator/mortgage_calculator.html">Mortgage Calculator</a>
+                    <a href="finance/comp_interest/comp_interest.html">Compound Interest Calculator</a>
+                    <a href="finance/retirement_calculator/retirement_calculator.html">Retirement Calculator</a>
+                    <a href="finance/ROI_calculator/ROI_calculator.html">ROI Calculator</a>
+                    <a href="finance/EMI_calculator/EMI_calculator.html">EMI Calculator</a>
+                </div>
+
+                <div class="setion" onclick="window.location.href='/all_tools/all_tools.html#others_category'">
+                    <img src="img/menu.png">
+                    <h2>Others</h2>
+                    <a href="others/counter/counter.html">Counter</a>
+                    <a href="others/dice_roll/dice_roll.html">Dice Roll</a>
+                    <a href="others/coin_flip/coin_flip.html">Coin Flip</a>
+                    <a href="others/wheel_spinner/wheel_spinner.html">Wheel Spinner</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="all_tools_btn" onclick="window.location.href = '/all_tools/all_tools.html'">All tools</button>
+
+        <div class="foot">
+            <p class="foot-word">VersaKit &copy; 2025 – All Rights Reserved</p>
+            <p class="foot-word" >Design by William Yen</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

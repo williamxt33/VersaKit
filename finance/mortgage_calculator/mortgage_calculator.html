@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mortgage Calculator - VersaKit</title>
+    <meta name="description" content="Calculate monthly mortgage payments, total interest, and amortization schedules. Compare different loan scenarios." />
+    <meta name="keywords" content="mortgage calculator, loan calculator, home loan, mortgage payment, amortization schedule" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="mortgage_calculator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Mortgage Calculator</h1>
+            <p>Calculate your monthly payments and total loan costs</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <h2>Loan Details</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="homePrice">Home Price</label>
+                        <input type="number" class="text-input" id="homePrice" value="300000" min="0" step="1000">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="downPayment">Down Payment</label>
+                        <input type="number" class="text-input" id="downPayment" value="60000" min="0" step="1000">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="loanTerm">Loan Term (Years)</label>
+                        <select class="select-input" id="loanTerm">
+                            <option value="10">10 years</option>
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="25">25 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="interestRate">Interest Rate (%)</label>
+                        <input type="number" class="text-input" id="interestRate" value="6.5" min="0" max="20" step="0.01">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h2>Additional Costs</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="propertyTax">Property Tax (Annual)</label>
+                        <input type="number" class="text-input" id="propertyTax" value="3000" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="homeInsurance">Home Insurance (Annual)</label>
+                        <input type="number" class="text-input" id="homeInsurance" value="1200" min="0" step="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="hoa">HOA Fees (Monthly)</label>
+                        <input type="number" class="text-input" id="hoa" value="0" min="0" step="10">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="pmi">PMI (%)</label>
+                        <input type="number" class="text-input" id="pmi" value="0.5" min="0" max="5" step="0.1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculate-section">
+                <button class="calculate-button" onclick="calculateMortgage()">Calculate Payment</button>
+                <button class="clear-button" onclick="clearForm()">Clear</button>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <h3>Payment Summary</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Monthly Payment</div>
+                        <div class="result-value highlight" id="monthlyPayment">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Principal & Interest</div>
+                        <div class="result-value" id="principalInterest">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Total Interest</div>
+                        <div class="result-value" id="totalInterest">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Total Cost</div>
+                        <div class="result-value" id="totalCost">$0</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Loan Breakdown</div>
+                    <div class="pie-chart">
+                        <div class="pie-visual" id="pieChart"></div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #007bff;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Principal</span>
+                                    <span class="legend-amount" id="principalAmount">$0</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #dc3545;"></div>
+                                <div class="legend-text">
+                                    <span class="legend-label">Interest</span>
+                                    <span class="legend-amount" id="interestAmount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="amortization-table" id="amortizationSection">
+                <h3>Amortization Schedule (First Year)</h3>
+                <table id="amortizationTable">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amortizationBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-section">
+                <h3>Mortgage Information</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>What is a Mortgage?</h4>
+                        <p>A mortgage is a loan used to purchase real estate, where the property serves as collateral.</p>
+                        <p><strong>Fixed-Rate:</strong> Interest rate remains constant throughout the loan term</p>
+                        <p><strong>Adjustable-Rate (ARM):</strong> Interest rate can change periodically</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Down Payment</h4>
+                        <p><strong>20% or more:</strong> Typically avoids PMI and gets better rates</p>
+                        <p><strong>Less than 20%:</strong> May require private mortgage insurance (PMI)</p>
+                        <p><strong>FHA Loans:</strong> Can be as low as 3.5% down payment</p>
+                        <p><strong>VA Loans:</strong> May offer 0% down for qualified veterans</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Additional Costs</h4>
+                        <p><strong>Property Tax:</strong> Varies by location, typically 0.5-2% of home value annually</p>
+                        <p><strong>Home Insurance:</strong> Protects against damage and liability</p>
+                        <p><strong>PMI:</strong> Usually 0.3-1.5% of loan amount annually</p>
+                        <p><strong>HOA Fees:</strong> For community amenities and maintenance</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Tips for Borrowers</h4>
+                        <p>• Improve credit score for better interest rates</p>
+                        <p>• Shop around with multiple lenders</p>
+                        <p>• Consider total monthly payment, not just mortgage</p>
+                        <p>• Factor in closing costs (2-5% of home price)</p>
+                        <p>• Make extra principal payments to save on interest</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="mortgage_calculator.js"></script>
+</body>
+</html>

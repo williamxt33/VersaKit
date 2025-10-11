@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Speed Converter - VersaKit</title>
+    <meta name="description" content="Convert between different speed units easily - m/s, km/h, mph, ft/s, and more." />
+    <meta name="keywords" content="speed converter, unit converter, meter per second, kilometer per hour, mph, ft/s" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="speed_converter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Speed Converter</h1>
+            <p>Convert between different speed units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Metric Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Meter per second</div>
+                        <input type="number" class="unit-input" id="m_s" placeholder="Enter number">
+                        <div class="unit-symbol">m/s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Centimeter per second</div>
+                        <input type="number" class="unit-input" id="cm_s" placeholder="Enter number">
+                        <div class="unit-symbol">cm/s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Meter per minute</div>
+                        <input type="number" class="unit-input" id="m_min" placeholder="Enter number">
+                        <div class="unit-symbol">m/min</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Kilometer per hour</div>
+                        <input type="number" class="unit-input" id="km_hr" placeholder="Enter number">
+                        <div class="unit-symbol">km/hr</div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Imperial Units</h2>
+                    <div class="unit-row">
+                        <div class="unit-label">Foot per second</div>
+                        <input type="number" class="unit-input" id="ft_s" placeholder="Enter number">
+                        <div class="unit-symbol">ft/s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Inch per second</div>
+                        <input type="number" class="unit-input" id="in_s" placeholder="Enter number">
+                        <div class="unit-symbol">in/s</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Foot per minute</div>
+                        <input type="number" class="unit-input" id="ft_min" placeholder="Enter number">
+                        <div class="unit-symbol">ft/min</div>
+                    </div>
+                    <div class="unit-row">
+                        <div class="unit-label">Mile per hour</div>
+                        <input type="number" class="unit-input" id="mile_hr" placeholder="Enter number">
+                        <div class="unit-symbol">mile/hr</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Speed Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1 m/s = 60 m/min = 3.6 km/hr</div>
+                        <div class="example-item">1 m/s = 3.28 ft/s = 39.37 in/s</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 ft/s = 12 in/s = 0.68 mile/hr</div>
+                        <div class="example-item">1 ft/s = 0.30 m/s = 1.10 km/hr</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="speed_converter.js"></script>
+</body>
+</html>

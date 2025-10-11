@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Counter - VersaKit</title>
+    <meta name="description" content="Simple counter tool with increment, decrement, reset, and custom step controls. Perfect for tallying, tracking, and counting." />
+    <meta name="keywords" content="counter, tally counter, click counter, number counter, counting tool, increment counter" />
+    <meta name="author" content="William Yen" />
+
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="counter.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Counter</h1>
+            <p>Simple and powerful counting tool</p>
+        </div>
+
+        <div class="main-content">
+            <div class="counter-display">
+                <div class="counter-label">Main Counter</div>
+                <div class="counter-value" id="mainCounter">0</div>
+            </div>
+
+            <div class="controls-section">
+                <button class="control-btn btn-increment" onclick="increment()">+ Increment</button>
+                <button class="control-btn btn-decrement" onclick="decrement()">- Decrement</button>
+                <button class="control-btn btn-reset" onclick="resetCounter()">Reset</button>
+            </div>
+
+            <div class="settings-section">
+                <h3>Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <label class="setting-label">Step Value</label>
+                        <input type="number" class="setting-input" id="stepValue" value="1" min="1">
+                    </div>
+                    <div class="setting-item">
+                        <label class="setting-label">Set Custom Value</label>
+                        <input type="number" class="setting-input" id="customValue" placeholder="Enter value">
+                    </div>
+                    <div class="setting-item">
+                        <label class="setting-label">Quick Actions</label>
+                        <button class="control-btn btn-increment" style="width: 100%; padding: 0.75rem;" onclick="setCustom()">Set Value</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="counters-list">
+                <h3>Multiple Counters</h3>
+                <div class="add-counter-section">
+                    <input type="text" class="add-counter-input" id="newCounterName" placeholder="Enter counter name">
+                    <button class="add-counter-btn" onclick="addCounter()">Add Counter</button>
+                </div>
+                <div id="countersList"></div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Counter Features</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <h4>Basic Controls</h4>
+                        <p><strong>Increment:</strong> Add the step value to the counter</p>
+                        <p><strong>Decrement:</strong> Subtract the step value from the counter</p>
+                        <p><strong>Reset:</strong> Set counter back to zero</p>
+                        <p><strong>Step Value:</strong> Change how much to add/subtract per click</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Custom Value</h4>
+                        <p>Set the counter to any specific number instantly</p>
+                        <p>Useful for starting at a specific count or jumping to a target value</p>
+                        <p>Enter the desired number and click "Set Value"</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Multiple Counters</h4>
+                        <p>Create multiple named counters for different purposes</p>
+                        <p>Each counter operates independently</p>
+                        <p>Perfect for tracking multiple items, events, or categories</p>
+                        <p>Delete counters you no longer need</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Use Cases</h4>
+                        <p>• Inventory counting and stock management</p>
+                        <p>• Event attendance tracking</p>
+                        <p>• Scorekeeping for games</p>
+                        <p>• Tally counting for surveys</p>
+                        <p>• Workout rep counting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="counter.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Group Generator - VersaKit</title>
+    <meta name="description" content="Randomly split people into groups. Perfect for team assignments, classroom activities, and organizing events." />
+    <meta name="keywords" content="group generator, random groups, team maker, split groups, classroom groups, random team generator" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="group_generator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Group Generator</h1>
+            <p>Randomly split people into fair and balanced groups</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Names Input -->
+                <div class="unit-group">
+                    <h2>Enter Names</h2>
+                    
+                    <div class="input-row-full">
+                        <label class="input-label" for="namesList">List of Names</label>
+                        <div class="input-sublabel">Enter one name per line</div>
+                        <textarea class="textarea-input" id="namesList" placeholder="John Doe&#10;Jane Smith&#10;Alice Johnson&#10;Bob Wilson&#10;Charlie Brown"></textarea>
+                        
+                        <div class="quick-add-buttons">
+                            <button class="quick-add-btn" onclick="addSampleNames()">Add Sample Names</button>
+                            <button class="quick-add-btn" onclick="clearNames()">Clear All</button>
+                        </div>
+                        
+                        <div class="name-count" id="nameCount">0 names entered</div>
+                    </div>
+                </div>
+
+                <!-- Group Settings -->
+                <div class="unit-group">
+                    <h2>Group Settings</h2>
+                    
+                    <div class="unit-row">
+                        <label class="input-label" for="groupMethod">Division Method</label>
+                        <select class="select-input" id="groupMethod" onchange="updateMethodUI()">
+                            <option value="numGroups">Number of Groups</option>
+                            <option value="groupSize">People per Group</option>
+                        </select>
+                    </div>
+
+                    <div class="unit-row" id="numGroupsInput">
+                        <label class="input-label" for="numberOfGroups">Number of Groups</label>
+                        <input type="number" class="unit-input" id="numberOfGroups" value="3" min="1" max="50">
+                    </div>
+
+                    <div class="unit-row hidden" id="groupSizeInput">
+                        <label class="input-label" for="peoplePerGroup">People per Group</label>
+                        <input type="number" class="unit-input" id="peoplePerGroup" value="3" min="1" max="50">
+                    </div>
+
+                    <div class="unit-row">
+                        <label class="input-label" for="sortOrder">Sort Names By (names order)</label>
+                        <select class="select-input" id="sortOrder">
+                            <option value="random">Random Order</option>
+                            <option value="alphabetical">Alphabetical (A-Z)</option>
+                            <option value="reverse">Reverse Alphabetical (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generate-section">
+                <button class="generate-button" onclick="generateGroups()">Generate Groups</button>
+                <button class="clear-button" onclick="clearResults()">Clear Results</button>
+            </div>
+
+            <div id="statsSection" class="stats-section hidden">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="statTotal">0</div>
+                        <div class="stat-label">Total People</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statGroups">0</div>
+                        <div class="stat-label">Groups Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statAverage">0</div>
+                        <div class="stat-label">Average per Group</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <h3>Generated Groups</h3>
+                <div class="groups-container" id="groupsContainer">
+                    <!-- Groups will be generated here -->
+                </div>
+                
+                <div class="results-actions">
+                    <button class="action-button" onclick="copyGroups()">Copy All Groups</button>
+                    <button class="action-button" onclick="downloadGroups()">Download as Text</button>
+                    <button class="action-button" onclick="regenerateGroups()">Regenerate</button>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Group Generator Information</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <h4>How It Works</h4>
+                        <p>The group generator uses a random shuffling algorithm to fairly distribute people into groups.</p>
+                        <p>Each person has an equal chance of being in any group.</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Division Methods</h4>
+                        <p><strong>Number of Groups:</strong> Specify how many groups you want.</p>
+                        <p><strong>People per Group:</strong> Specify maximum group size.</p>
+                        <p><strong>Example:</strong> 20 people → 4 groups = 5 people per group</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Use Cases</h4>
+                        <p>• Classrooms - Assign students to project teams</p>
+                        <p>• Sports - Create balanced teams for games</p>
+                        <p>• Events - Organize attendees into discussion groups</p>
+                        <p>• Workshops - Form breakout groups</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Tips & Best Practices</h4>
+                        <p>• Enter clear, identifiable names</p>
+                        <p>• Use balanced groups for fair team assignments</p>
+                        <p>• Regenerate if you need different combinations</p>
+                        <p>• Save results before generating new groups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="group_generator.js"></script>
+</body>
+</html>

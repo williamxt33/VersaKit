@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Retirement Calculator - VersaKit</title>
+    <meta name="description" content="Calculate your retirement savings and plan for the future. Estimate how much you need to save for retirement." />
+    <meta name="keywords" content="retirement calculator, retirement planning, savings calculator, pension calculator, financial planning" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="retirement_calculator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Retirement Calculator</h1>
+            <p>Plan your financial future and estimate retirement savings</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <!-- Current Situation -->
+                <div class="unit-group">
+                    <h2>Current Situation</h2>
+                    
+                    <div class="unit-row">
+                        <div class="input-label">Current Age</div>
+                        <input type="number" class="unit-input" id="currentAge" value="30" min="18" max="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Retirement Age</div>
+                        <input type="number" class="unit-input" id="retirementAge" value="65" min="50" max="100">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Life Expectancy</div>
+                        <input type="number" class="unit-input" id="lifeExpectancy" value="85" min="60" max="120">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Current Savings</div>
+                        <input type="number" class="unit-input" id="currentSavings" value="50000" min="0" step="1000">
+                    </div>
+                </div>
+
+
+                <div class="unit-group">
+                    <h2>Savings Plan</h2>
+                    
+                    <div class="unit-row">
+                        <div class="input-label">Monthly Contribution</div>
+                        <input type="number" class="unit-input" id="monthlyContribution" value="500" min="0" step="50">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Annual Return Rate</div>
+                        <input type="number" class="unit-input" id="returnRate" value="7" min="0" max="20" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Inflation Rate</div>
+                        <input type="number" class="unit-input" id="inflationRate" value="3" min="0" max="10" step="0.1">
+                    </div>
+
+                    <div class="unit-row">
+                        <div class="input-label">Desired Monthly Income</div>
+                        <input type="number" class="unit-input" id="desiredIncome" value="3000" min="0" step="100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="generate-section">
+                <button class="generate-button" onclick="calculateRetirement()">Calculate Retirement</button>
+                <button class="clear-button" onclick="clearResults()">Clear All</button>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <h3>Retirement Analysis</h3>
+                
+                <div class="result-card">
+                    <div class="result-main" id="totalSavings">$0</div>
+                    <div class="result-label">Total Retirement Savings</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="yearsToRetire">0</div>
+                        <div class="stat-label">Years to Retirement</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="yearsInRetirement">0</div>
+                        <div class="stat-label">Years in Retirement</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="monthlyRetirement">$0</div>
+                        <div class="stat-label">Monthly Retirement Income</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalContributions">$0</div>
+                        <div class="stat-label">Total Contributions</div>
+                    </div>
+                </div>
+
+                <div class="breakdown-section">
+                    <h4>Savings Breakdown</h4>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Current Savings</span>
+                        <span class="breakdown-value" id="breakdownCurrent">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Future Contributions</span>
+                        <span class="breakdown-value" id="breakdownContributions">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Investment Growth</span>
+                        <span class="breakdown-value" id="breakdownGrowth">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Total at Retirement</span>
+                        <span class="breakdown-value" id="breakdownTotal">$0</span>
+                    </div>
+                </div>
+
+                <div id="recommendationBox"></div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Retirement Planning Information</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <h4>Understanding the Calculator</h4>
+                        <p>This calculator estimates how much you'll have saved by retirement based on current savings, regular contributions, and expected investment returns.</p>
+                        <p><strong>Note:</strong> Results are estimates. Actual returns may vary based on market conditions and investment choices.</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Return Rate Expectations</h4>
+                        <p><strong>Conservative (4-5%):</strong> Lower risk investments like bonds</p>
+                        <p><strong>Moderate (6-8%):</strong> Balanced portfolio of stocks and bonds</p>
+                        <p><strong>Aggressive (9-11%):</strong> Higher risk stock-heavy portfolio</p>
+                        <p>Historical stock market average is about 10% before inflation.</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Inflation Impact</h4>
+                        <p>Inflation reduces the purchasing power of money over time.</p>
+                        <p>A 3% inflation rate means what costs $100 today will cost about $181 in 20 years.</p>
+                        <p>Always account for inflation in retirement planning to maintain your standard of living.</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Important Considerations</h4>
+                        <p>• This calculator provides estimates only, not financial advice</p>
+                        <p>• Consider other income sources like Social Security or pensions</p>
+                        <p>• Account for healthcare costs which increase with age</p>
+                        <p>• Review and adjust your plan regularly</p>
+                        <p>• Consult a financial advisor for personalized guidance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+            <p>Disclaimer: This calculator is for educational purposes only. Consult a financial advisor for professional advice.</p>
+        </div>
+    </div>
+
+    <script src="retirement_calculator.js"></script>
+</body>
+</html>

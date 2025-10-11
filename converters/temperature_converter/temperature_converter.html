@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weight Converter - VersaKit</title>
+    <meta name="description" content="Convert between metric and imperial Weight units easily - meters, centimeters, millimeters, feet, inches, yards, and more." />
+    <meta name="keywords" content="Weight converter, unit converter, metric to imperial, feet to meters, inches to cm, measurement converter" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="temperature_converter.css">
+
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div  class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
+
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Temperature Converter</h1>
+            <p>Convert between metric and imperial Weight units</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-row">
+                    <div class="unit-label">Celsius</div>
+                    <input type="number" class="unit-input" id="celsius" placeholder="Enter number">
+                    <div class="unit-symbol">°C</div>
+                </div>
+
+                <div class="unit-row">
+                    <div class="unit-label">Fahrenheit</div>
+                    <input type="number" class="unit-input" id="fahrenheit" placeholder="Enter number">
+                    <div class="unit-symbol">°F</div>
+                </div>
+
+                <div class="unit-row">
+                    <div class="unit-label">Kelvin </div>
+                    <input type="number" class="unit-input" id="kelvin" placeholder="Enter number">
+                    <div class="unit-symbol">K</div>
+                </div>
+
+                <div class="unit-row">
+                    <div class="unit-label">Rankine  </div>
+                    <input type="number" class="unit-input" id="rankine" placeholder="Enter number">
+                    <div class="unit-symbol">°R</div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Weight Conversion Reference</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">K = °C + 273.15</div>
+                        <div class="example-item">°C = (°F - 32) x 5/9</div>
+                        <div class="example-item">°F = °C x 9/5 + 32</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">0 K = -273.15 °C = -459.67 °F</div>
+                        <div class="example-item">0 °C = 32 °F = 273.15 K</div>
+                        <div class="example-item">100 °C = 212 °F = 373.15 K</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <Script src="temperature_converter.js"></Script>
+</body>
+</html>
