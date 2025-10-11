@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Angle Converter - VersaKit</title>
+    <meta name="description" content="Convert angles between degrees, radians, arcminutes, and arcseconds." />
+    <meta name="keywords" content="angle converter, degree to radian, radian to degree, arc minute, arc second, DMS converter, angle units, degree minute second" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+
+    <link rel="stylesheet" href="angle_converter.css">
+
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/tools">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <img src="/img/logo.png" class="logo" onclick="window.location.href='/index.html'"></img>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/tools">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Angle Converter</h1>
+            <p>Convert angles between degrees, radians, arcminutes, and arcseconds</p>
+        </div>
+
+        <div class="main-content">
+            <div class="units-section">
+                <div class="unit-group">
+                    <h2>Angle Units</h2>
+                    
+                    <div class="angle-units-grid">
+                        <div class="unit-row">
+                            <label class="unit-label">Degree</label>
+                            <input type="number" id="degree" class="unit-input" placeholder="0">
+                            <span class="unit-symbol">°</span>
+                        </div>
+
+                        <div class="unit-row">
+                            <label class="unit-label">Radian</label>
+                            <input type="number" id="radian" class="unit-input" placeholder="0">
+                            <span class="unit-symbol">rad</span>
+                        </div>
+
+                        <div class="unit-row">
+                            <label class="unit-label">Arc Minute</label>
+                            <input type="number" id="arcminute" class="unit-input" placeholder="0">
+                            <span class="unit-symbol">'</span>
+                        </div>
+
+                        <div class="unit-row">
+                            <label class="unit-label">Arc Second</label>
+                            <input type="number" id="arcsecond" class="unit-input" placeholder="0">
+                            <span class="unit-symbol">"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <h2>Degree-Minute-Second Format</h2>
+                    
+                    <div class="unit-row">
+                        <label class="unit-label">Degree-Minute-Second</label>
+                        <input type="text" id="dms" class="unit-input" placeholder="0° 0' 0&quot;">
+                        <span class="unit-symbol">°'"</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Unit Conversion Relationships</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <div class="example-item">1° = 60' = 3600"</div>
+                        <div class="example-item">1 degree = 60 arc minutes = 3600 arc seconds</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">360° = 2π rad = 21600' = 1296000"</div>
+                        <div class="example-item">Full circle = 2π radians</div>
+                    </div>
+                    <div class="example-group">
+                        <div class="example-item">1 rad ≈ 57.2958°</div>
+                        <div class="example-item">1 radian ≈ 57.2958 degrees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+            <p>Design by William Yen</p>
+        </div>
+    </div>
+
+    <script src="angle_converter.js"></script>
+</body>
+</html>

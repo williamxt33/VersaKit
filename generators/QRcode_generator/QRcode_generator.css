@@ -250,7 +250,7 @@ body {
 }
 
 .generate-button {
-    background: linear-gradient(135deg, #28a745, #20c997);
+    background: linear-gradient(135deg, #ffc107, #ff9800);
     color: white;
     border: none;
     padding: 1rem 2rem;

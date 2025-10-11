@@ -238,11 +238,11 @@ html {
 }
 
 .generator .box:hover {
-    border-color: #28a745;
+    border-color: #ffc107;
 }
 
 .finance .box:hover {
-    border-color: #ffc107;
+    border-color: #28a745;
 }
 
 .others .box:hover {
