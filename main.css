@@ -377,7 +377,7 @@ body {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
 }
 
 .search_area {
@@ -387,8 +387,9 @@ body {
 .search_bar {
     display: block;
     width: 100%;
-    max-width: 600px;
     margin: 0 auto 2rem auto;
+    position: relative;
+    bottom: 55px;
 }
 
 .search_bar input {
