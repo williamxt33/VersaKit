@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Info Generator - VersaKit</title>
+    <meta name="description" content="Generate random personal information for testing purposes. Create fake names, emails, phone numbers, addresses and more." />
+    <meta name="keywords" content="mock data generator, fake data generator, test data, dummy data, random data, Faker.js, RandomUser, Mockaroo, generate fake users, fake addresses, fake emails, fake phone numbers, test database, fake company names, fake transactions" />
+    <meta name="author" content="William Yen" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo_icon.png" />
+    <link rel="apple-touch-icon" href="/img/logo_icon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+    <link rel="stylesheet" href="mock_data_generator.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tools">All Tools</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+
+        <img src="/img/logo.png" class="logo" onclick="window.location.href='/index.html'"></img>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#tools">All Tools</a>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="header">
+            <h1>Random Info Generator</h1>
+            <p>Generate realistic fake personal information for testing purposes</p>
+        </div>
+
+        <div class="main-content">
+            <div class="warning-banner">
+                <strong>⚠️ For Testing & Development Only</strong>
+                All generated data is completely fictional and should only be used for testing, development, or educational purposes.
+            </div>
+
+            <div class="settings-section">
+                <h2>Select Information to Generate</h2>
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <span class="setting-label">Full Name</span>
+                        <input type="checkbox" class="checkbox-input" id="genName" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Email Address</span>
+                        <input type="checkbox" class="checkbox-input" id="genEmail" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Username</span>
+                        <input type="checkbox" class="checkbox-input" id="genUsername" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Phone Number</span>
+                        <input type="checkbox" class="checkbox-input" id="genPhone" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Address</span>
+                        <input type="checkbox" class="checkbox-input" id="genAddress" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Country/Region</span>
+                        <input type="checkbox" class="checkbox-input" id="genCountry" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Date of Birth</span>
+                        <input type="checkbox" class="checkbox-input" id="genDOB" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">ID Number</span>
+                        <input type="checkbox" class="checkbox-input" id="genID" checked>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Credit Card</span>
+                        <input type="checkbox" class="checkbox-input" id="genCard" checked>
+                    </div>
+                </div>
+            </div>
+
+            <div class="count-section">
+                <div class="count-control">
+                    <label class="count-label" for="personCount">Number of People:</label>
+                    <input type="number" class="count-input" id="personCount" value="5" min="1" max="1000">
+                </div>
+            </div>
+
+            <div class="generate-section">
+                <button class="generate-button" onclick="generateInfo()">Generate Information</button>
+                <button class="clear-button" onclick="clearResults()">Clear Results</button>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <h3>Generated Information</h3>
+                <div class="results-count" id="resultsCount"></div>
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Results will be generated here -->
+                </div>
+                
+                <div id="showMoreSection" class="show-more-section hidden">
+                    <button class="show-more-button" onclick="showMoreResults()">Show More (10)</button>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="action-button" onclick="copyAllInfo()">Copy All</button>
+                    <button class="action-button" onclick="downloadInfo()">Download as Text</button>
+                    <button class="action-button" onclick="generateInfo()">Regenerate</button>
+                </div>
+            </div>
+
+            <div class="conversion-info">
+                <h3>Random Info Generator Information</h3>
+                <div class="conversion-examples">
+                    <div class="example-group">
+                        <h4>Use Cases</h4>
+                        <p>• Software Testing - Populate databases with test data</p>
+                        <p>• UI/UX Design - Fill mockups with realistic information</p>
+                        <p>• Development - Create sample user profiles</p>
+                        <p>• Education - Practice data handling scenarios</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Data Types</h4>
+                        <p><strong>Personal:</strong> Names, usernames, dates of birth</p>
+                        <p><strong>Contact:</strong> Email addresses, phone numbers, addresses</p>
+                        <p><strong>Financial:</strong> Credit card numbers (fake, for testing)</p>
+                        <p><strong>Identity:</strong> ID numbers (randomly generated)</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Important Notes</h4>
+                        <p>• All data is completely fictional and randomly generated</p>
+                        <p>• Never use for fraudulent or illegal purposes</p>
+                        <p>• Credit cards use valid Luhn algorithm but are not real</p>
+                        <p>• Phone numbers and addresses are formatted but fictional</p>
+                    </div>
+                    <div class="example-group">
+                        <h4>Privacy & Ethics</h4>
+                        <p>• This tool generates fake data only</p>
+                        <p>• Use responsibly for legitimate testing purposes</p>
+                        <p>• Do not use generated data to impersonate real people</p>
+                        <p>• Always comply with data protection regulations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>VersaKit © 2025 – All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="mock_data_generator.js"></script>
+    
+</body>
+</html>
