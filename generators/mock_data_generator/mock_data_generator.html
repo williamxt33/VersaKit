@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Info Generator - VersaKit</title>
-    <meta name="description" content="Generate random personal information for testing purposes. Create fake names, emails, phone numbers, addresses and more." />
+    <meta name="description" content="Generate realistic, fictional personal information for testing, development, and design mockups. Create fake names, emails, usernames, phone numbers, addresses, and other profile data quickly—perfect for populating test databases, UI mockups, and demonstration content." />
     <meta name="keywords" content="mock data generator, fake data generator, test data, dummy data, random data, Faker.js, RandomUser, Mockaroo, generate fake users, fake addresses, fake emails, fake phone numbers, test database, fake company names, fake transactions" />
     <meta name="author" content="William Yen" />
 
@@ -19,8 +19,8 @@
     <div class="side-menu" id="side-menu">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#tools">All Tools</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
             </ul>
         </nav>
     </div>
@@ -35,15 +35,15 @@
         <img src="/img/logo.png" class="logo" onclick="window.location.href='/index.html'"></img>
 
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#tools">All Tools</a>
+            <a href="/index.html">Home</a>
+            <a href="/all_tools/all_tools.html">All Tools</a>
         </div>
     </div>
 
     <div class="converter-container">
         <div class="header">
-            <h1>Random Info Generator</h1>
-            <p>Generate realistic fake personal information for testing purposes</p>
+            <h1>Moch Data Generator</h1>
+            <p>Generate realistic, fictional personal information for development, testing, and design mockups. Produce fake names, emails, phone numbers, addresses, and more to populate databases and UI prototypes without risking real user data. Use responsibly and only for legitimate testing purposes.</p>
         </div>
 
         <div class="main-content">
@@ -125,35 +125,43 @@
             </div>
 
             <div class="conversion-info">
-                <h3>Random Info Generator Information</h3>
+                <h3>Random Info Generator — About & How to Use</h3>
                 <div class="conversion-examples">
                     <div class="example-group">
-                        <h4>Use Cases</h4>
-                        <p>• Software Testing - Populate databases with test data</p>
-                        <p>• UI/UX Design - Fill mockups with realistic information</p>
-                        <p>• Development - Create sample user profiles</p>
-                        <p>• Education - Practice data handling scenarios</p>
+                        <h4>About this Mock Data Generator</h4>
+                        <p>Generate realistic, fictional personal information instantly for development, testing, and design. This tool creates sample names, emails, usernames, phone numbers, addresses, and other profile data so you can populate databases, mockups, and demos without exposing real user information. Output is flexible — generate a single record for a UI mockup or hundreds of records for seeding test databases.</p>
+                        <p>All data produced by this generator is synthetic and intended only for legitimate testing, development, and educational purposes.</p>
                     </div>
+
                     <div class="example-group">
-                        <h4>Data Types</h4>
-                        <p><strong>Personal:</strong> Names, usernames, dates of birth</p>
-                        <p><strong>Contact:</strong> Email addresses, phone numbers, addresses</p>
-                        <p><strong>Financial:</strong> Credit card numbers (fake, for testing)</p>
-                        <p><strong>Identity:</strong> ID numbers (randomly generated)</p>
+                        <h4>How to use it?</h4>
+                        <ol>
+                            <li><strong>Select fields:</strong> Choose which types of data to generate (names, emails, phone numbers, addresses, etc.).</li>
+                            <li><strong>Set quantity:</strong> Enter how many records you need. For large datasets, consider generating in batches to avoid browser memory limits.</li>
+                            <li><strong>Customize options:</strong> Use any available format or country-specific options to match your testing needs (date formats, address styles, phone formats).</li>
+                            <li><strong>Generate:</strong> Click the "Generate Information" button to create the requested records instantly.</li>
+                            <li><strong>Export or copy:</strong> Use the provided "Copy All" or "Download as Text" buttons to export results for import into your application or test environment.</li>
+                            <li><strong>Repeat if needed:</strong> Regenerate to get different random datasets for additional testing scenarios.</li>
+                        </ol>
+                        <p><em>Tip:</em> When creating test datasets for privacy-sensitive workflows, consider mixing realistic-looking fake data with clearly flagged placeholder values so it's obvious that the dataset is synthetic.</p>
                     </div>
+
                     <div class="example-group">
-                        <h4>Important Notes</h4>
-                        <p>• All data is completely fictional and randomly generated</p>
-                        <p>• Never use for fraudulent or illegal purposes</p>
-                        <p>• Credit cards use valid Luhn algorithm but are not real</p>
-                        <p>• Phone numbers and addresses are formatted but fictional</p>
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>Use generated data only for development, QA, demos, and training — never as a substitute for proper anonymization of real user data.</li>
+                            <li>When testing integrations, ensure formats (email, phone, address) match the expected input of your target systems to catch parsing and validation issues.</li>
+                            <li>Seed non-production databases with synthetic data to avoid privacy risks and to enable realistic testing at scale.</li>
+                            <li>Document datasets used for testing so teams know when data is synthetic vs real.</li>
+                        </ul>
                     </div>
+
                     <div class="example-group">
-                        <h4>Privacy & Ethics</h4>
-                        <p>• This tool generates fake data only</p>
-                        <p>• Use responsibly for legitimate testing purposes</p>
-                        <p>• Do not use generated data to impersonate real people</p>
-                        <p>• Always comply with data protection regulations</p>
+                        <h4>Data Types & Ethics</h4>
+                        <p><strong>Personal:</strong> First/last names, usernames, DOBs (synthetic)</p>
+                        <p><strong>Contact:</strong> Email addresses and telephone numbers formatted for realism but not tied to real subscribers</p>
+                        <p><strong>Financial & IDs:</strong> Credit card-like numbers (Luhn-valid but non-functional) and random ID numbers for testing only</p>
+                        <p><strong>Ethics & Legal:</strong> Never use generated data to impersonate individuals or to attempt fraud. Always comply with local data protection laws and your organization's policies when handling test or production datasets.</p>
                     </div>
                 </div>
             </div>
