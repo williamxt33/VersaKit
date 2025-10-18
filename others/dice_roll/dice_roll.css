@@ -389,7 +389,7 @@ body {
     color: #007bff;
 }
 
-.conversion-info {
+.reference-section {
     background: #fff;
     border-radius: 15px;
     padding: 2rem;
@@ -397,32 +397,32 @@ body {
     margin-top: 2rem;
 }
 
-.conversion-info h3 {
+.reference-section h3 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #495057;
     font-size: 1.3rem;
 }
 
-.conversion-examples {
+.reference-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-.example-group {
+.reference-item {
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 12px;
     border-left: 4px solid #007bff;
 }
 
-.example-group h4 {
+.reference-item h4 {
     margin-bottom: 1rem;
     color: #495057;
 }
 
-.example-group p {
+.reference-item p {
     font-size: 0.9rem;
     color: #6c757d;
     line-height: 1.5;

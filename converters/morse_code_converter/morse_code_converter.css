@@ -390,10 +390,13 @@ body {
     font-size: 1.3rem;
 }
 
+
+
 .morse-reference {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+
 }
 
 .reference-group {
@@ -401,6 +404,7 @@ body {
     padding: 1rem;
     border-radius: 12px;
     border-left: 4px solid #007bff;
+    margin-bottom: 50px;
 }
 
 .reference-group h4 {

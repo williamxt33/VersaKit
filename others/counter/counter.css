@@ -196,37 +196,41 @@ body {
 }
 
 .btn-increment {
-    background: linear-gradient(135deg, #6c9a6c, #5d8a5d);
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
     color: white;
+    transition: all 0.3s ease;
 }
 
 .btn-increment:hover {
-    background: linear-gradient(135deg, #5d8a5d, #4e7a4e);
+    background: linear-gradient(135deg, #31d979, #2aba66);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(108, 154, 108, 0.3);
+    box-shadow: 0 6px 18px rgba(46, 204, 113, 0.4);
 }
 
 .btn-decrement {
-    background: linear-gradient(135deg, #b85c5c, #a84d4d);
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: white;
+    transition: all 0.3s ease;
 }
 
 .btn-decrement:hover {
-    background: linear-gradient(135deg, #a84d4d, #983e3e);
+    background: linear-gradient(135deg, #ff5e4d, #d94132);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(184, 92, 92, 0.3);
+    box-shadow: 0 6px 18px rgba(231, 76, 60, 0.4);
 }
 
 .btn-reset {
-    background: #6c757d;
+    background: linear-gradient(135deg, #7f8c8d, #707b7c);
     color: white;
+    transition: all 0.3s ease;
 }
 
 .btn-reset:hover {
-    background: #5a6268;
+    background: linear-gradient(135deg, #95a5a6, #808b8c);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(108, 117, 125, 0.3);
+    box-shadow: 0 6px 18px rgba(127, 140, 141, 0.4);
 }
+
 
 .settings-section {
     background: #fff;
