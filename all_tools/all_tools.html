@@ -36,31 +36,33 @@
     <link rel="stylesheet" href="all_tools.css" />
 </head>
 <body>
-    <div class="side-menu" id="side-menu">
+    <aside class="side-menu" id="side-menu">
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="">All Tools</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="about/about.html">About Us</a></li>
+                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
             </ul>
         </nav>
-    </div>
+    </aside>
 
-
-    <div class="navbar">
-        <div class="ham-menu" onclick="toggleMenu()">
+    <header class="navbar">
+        <div class="ham-menu" onclick="toggleMenu()">      
             <div id="bar1" class="bar"></div>
             <div id="bar2" class="bar"></div>
             <div id="bar3" class="bar"></div>
         </div>
 
-        <img class="logo" src="/img/logo.png" onclick="window.location.href='../index.html'">
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="">All Tools</a>
-        </div>
-    </div>
+        <img class="logo" src="/img/logo.png" onclick="window.location.href='/index.html'">
 
-    <div id="container">
+        <nav class="nav-links">
+            <a href="">Home</a>
+            <a href="about/about.html">About Us</a>
+            <a href="/all_tools/all_tools.html" id="allTools-btn" style="color: white;">All Tools</a>
+        </nav>
+    </header>
+
+    <main id="container">
         <div class="tools-header">
             <h1>All Tools</h1>
             <p>Choose from our collection of practical online utilities</p>
@@ -296,11 +298,16 @@
             </div>
         </div>
 
-        <div class="foot">
-            <p class="foot-word">VersaKit &copy; 2025 – All Rights Reserved</p>
-            <p class="foot-word">Design by William Yen</p>
-        </div>
-    </div>
+        <footer>
+            <p class="foot-word">
+                VersaKit &copy; 2025 – All Rights Reserved | 
+                <a href="/about/about.html">about us</a> | 
+                <a href="/policy/policy.html#general-policy">policy</a> | 
+                <a href="/policy/policy.html#terms-of-use">term of use</a> | 
+                <a href="/policy/policy.html#privacy-policy">privacy policy</a>
+            </p>
+        </footer>
+    </main>
 
     <script src="all_tools.js"></script>
 </body>

@@ -1,6 +1,3 @@
-//file location:     C:\Users\willi\OneDrive\文件\visual studio code\Html Css Java script\VersaKit
-
-
 function toggleMenu() {
     const sideMenu = document.getElementById('side-menu');
     const hamMenu = document.querySelector('.ham-menu');
@@ -21,58 +18,52 @@ if (searchBar) {
     searchBar.parentElement.appendChild(searchResults);
 }
 
-// Dictionary mapping tool IDs to display names and categories
+// Dictionary mapping tool names to paths and categories
 const toolsDict = {
     // Converters
-    'temperatureConverter': { name: 'Temperature Converter', category: 'Converters' },
-    'morseCodeConverter': { name: 'Morse Code Converter', category: 'Converters' },
-    'lengthConverter': { name: 'Length Converter', category: 'Converters' },
-    'weightConverter': { name: 'Weight Converter', category: 'Converters' },
-    'ageConverter': { name: 'Age Converter', category: 'Converters' },
-    'currencyConverter': { name: 'Currency Converter', category: 'Converters' },
-    'fileConverter': { name: 'File Converter', category: 'Converters' },
-    'BMIConverter': { name: 'BMI Calculator', category: 'Converters' },
-    'speedConverter': { name: 'Speed Converter', category: 'Converters' },
-    'angleConverter': { name: 'Angle Converter', category: 'Converters' },
-    'areaConverter': { name: 'Area Converter', category: 'Converters' },
-    'volumeConverter': { name: 'Volume Converter', category: 'Converters' },
-    'densityConverter': { name: 'Density Converter', category: 'Converters' },
-    'forceConverter': { name: 'Force Converter', category: 'Converters' },
-    'pressureConverter': { name: 'Pressure Converter', category: 'Converters' },
-    'energyConverter': { name: 'Energy Converter', category: 'Converters' },
-    'powerConverter': { name: 'Power Converter', category: 'Converters' },
-    'viscosityConverter': { name: 'Viscosity Converter', category: 'Converters' },
+    'temperature_converter': { name: 'Temperature Converter', category: 'converters' },
+    'morse_code_converter': { name: 'Morse Code Converter', category: 'converters' },
+    'length_converter': { name: 'Length Converter', category: 'converters' },
+    'weight_converter': { name: 'Weight Converter', category: 'converters' },
+    'age_converter': { name: 'Age Converter', category: 'converters' },
+    'currency_converter': { name: 'Currency Converter', category: 'converters' },
+    'file_converter': { name: 'File Converter', category: 'converters' },
+    'BMI_calculator': { name: 'BMI Calculator', category: 'converters' },
+    'speed_converter': { name: 'Speed Converter', category: 'converters' },
+    'angle_converter': { name: 'Angle Converter', category: 'converters' },
+    'area_converter': { name: 'Area Converter', category: 'converters' },
+    'volume_converter': { name: 'Volume Converter', category: 'converters' },
+    'density_converter': { name: 'Density Converter', category: 'converters' },
+    'force_converter': { name: 'Force Converter', category: 'converters' },
+    'pressure_converter': { name: 'Pressure Converter', category: 'converters' },
+    'energy_converter': { name: 'Energy Converter', category: 'converters' },
+    'power_converter': { name: 'Power Converter', category: 'converters' },
+    'viscosity_converter': { name: 'Viscosity Converter', category: 'converters' },
     
     // Generators
-    'passwordGenerator': { name: 'Password Generator', category: 'Generators' },
-    'QRcodeGenerator': { name: 'QR Code Generator', category: 'Generators' },
-    'barCodeGenerator': { name: 'Bar Code Generator', category: 'Generators' },
-    'GroupGenerator': { name: 'Group Generator', category: 'Generators' },
-    'mockDataGenerator': { name: 'Mock Data Generator', category: 'Generators' },
+    'password_generator': { name: 'Password Generator', category: 'generators' },
+    'QRcode_generator': { name: 'QR Code Generator', category: 'generators' },
+    'bar_code_generator': { name: 'Bar Code Generator', category: 'generators' },
+    'group_generator': { name: 'Group Generator', category: 'generators' },
+    'mock_data_generator': { name: 'Mock Data Generator', category: 'generators' },
     
     // Finance
-    'mortgageCalculator': { name: 'Mortgage Calculator', category: 'Finance' },
-    'compoundInterestCalculator': { name: 'Compound Interest Calculator', category: 'Finance' },
-    'retirementCalculator': { name: 'Retirement Calculator', category: 'Finance' },
-    'EMICalculator': { name: 'EMI Calculator', category: 'Finance' },
-    'ROICalculator': { name: 'ROI Calculator', category: 'Finance' },
+    'mortgage_calculator': { name: 'Mortgage Calculator', category: 'finance' },
+    'comp_interest': { name: 'Compound Interest Calculator', category: 'finance' },
+    'retirement_calculator': { name: 'Retirement Calculator', category: 'finance' },
+    'EMI_calculator': { name: 'EMI Calculator', category: 'finance' },
+    'ROI_calculator': { name: 'ROI Calculator', category: 'finance' },
     
     // Others
-    'counter': { name: 'Counter', category: 'Others' },
-    'diceRoll': { name: 'Dice Roll', category: 'Others' },
-    'coinFlip': { name: 'Coin Flip', category: 'Others' },
-    'wheelSpin': { name: 'Wheel Spin', category: 'Others' }
+    'counter': { name: 'Counter', category: 'others' },
+    'dice_roll': { name: 'Dice Roll', category: 'others' },
+    'coin_flip': { name: 'Coin Flip', category: 'others' },
+    'wheel_spinner': { name: 'Wheel Spinner', category: 'others' }
 };
 
-// Get URL for each tool from the DOM
-function getToolUrl(toolId) {
-    const box = document.getElementById(toolId);
-    if (box) {
-        const onclickAttr = box.getAttribute('onclick');
-        const match = onclickAttr?.match(/href\s*=\s*['"]([^'"]+)['"]/);
-        return match ? match[1] : '#';
-    }
-    return '#';
+// Generate URL based on category and tool name
+function getToolUrl(toolKey, category) {
+    return `/${category}/${toolKey}/${toolKey}.html`;
 }
 
 // Search and display results
@@ -86,7 +77,7 @@ function performSearch() {
         return;
     }
     
-    // Filter tools where key or name starts with query
+    // Filter tools where key or name contains query
     const matches = [];
     
     for (const [key, value] of Object.entries(toolsDict)) {
@@ -94,23 +85,24 @@ function performSearch() {
         const nameLower = value.name.toLowerCase();
         const categoryLower = value.category.toLowerCase();
         
-        // Check if key, name, or category starts with the query
-        if (keyLower.startsWith(query) || nameLower.startsWith(query) || categoryLower.startsWith(query)) {
+        // Check if key, name, or category contains the query
+        if (keyLower.includes(query) || nameLower.includes(query) || categoryLower.includes(query)) {
             matches.push({
                 id: key,
                 name: value.name,
                 category: value.category,
-                url: getToolUrl(key)
+                displayCategory: value.category.charAt(0).toUpperCase() + value.category.slice(1),
+                url: getToolUrl(key, value.category)
             });
         }
     }
     
-    // Category colors
+  
     const categoryColors = {
-        'Converters': '#007bffff',    
-        'Generators': '#ffc107',    
-        'Finance': '#28a745',     
-        'Others': '#6f42c1'      
+        'converters': '#007bff',    
+        'generators': '#ffc107',    
+        'finance': '#28a745',     
+        'others': '#6f42c1'      
     };
     
     // Display results
@@ -125,7 +117,7 @@ function performSearch() {
                 <div class="search-item" onclick="window.location.href='${tool.url}'">
                     <div class="search-item-title">${tool.name}</div>
                     <div class="search-item-category" style="color: ${color}; font-weight: 600;">
-                        ${tool.category}
+                        ${tool.displayCategory}
                     </div>
                 </div>
             `;

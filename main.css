@@ -21,7 +21,7 @@ body {
     position: fixed;
     top: -300px;
     width: 100vw;
-    height: 30vh;
+    height: 35vh;
     text-align: center;
     background: #2c3e50;
     transition: 0.3s ease;
@@ -121,7 +121,17 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #f8f9fa;
+    background-color: #f0f0f0;
+}
+
+#allTools-btn{
+    background: rgb(0, 123, 0255);
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+#allTools-btn:hover{
+    background: rgb(0, 113, 234);
 }
 
 /* Container */
@@ -350,10 +360,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     width: 100vw;
-}
+    scroll-margin-top: 100px; 
 
-.search_area {
-    margin-bottom: 3rem;
 }
 
 .search_bar {
@@ -365,14 +373,15 @@ body {
 }
 
 .search_bar::after {
-  content: "\f002"; 
-  font-family: "Font Awesome 6 Free";
-  font-weight: 1000;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
+    cursor: pointer;
+    content: "\f002"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 1000;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
 }
 
 
@@ -452,8 +461,8 @@ body {
 }
 
 .search_suggest {
+    margin-top: -60px;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .search_suggest_btn {
@@ -549,13 +558,20 @@ body {
     transform: translateX(5px);
 }
 
-/* Footer */
-.foot {
+footer {
     background: #2c3e50;
     color: #ecf0f1;
     padding: 2rem;
     text-align: center;
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    color: #dddddd;
 }
 
 .foot-word {
