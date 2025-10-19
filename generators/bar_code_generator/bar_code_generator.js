@@ -272,21 +272,7 @@ function autoGenerate() {
     }, 800);
 }
 
-document.getElementById('barcodeData').addEventListener('input', autoGenerate);
-document.getElementById('barcodeFormat').addEventListener('change', function() {
-    updateFormatInfo();
-    const data = document.getElementById('barcodeData').value.trim();
-    if (data) {
-        autoGenerate();
-    }
-});
-document.getElementById('displayValue').addEventListener('input', autoGenerate);
-document.getElementById('barcodeWidth').addEventListener('input', autoGenerate);
-document.getElementById('barcodeHeight').addEventListener('input', autoGenerate);
-document.getElementById('fontSize').addEventListener('input', autoGenerate);
-document.getElementById('lineColor').addEventListener('change', autoGenerate);
-document.getElementById('bgColor').addEventListener('change', autoGenerate);
-document.getElementById('showText').addEventListener('change', autoGenerate);
+
 
 // Initialize
 window.addEventListener('load', () => {
