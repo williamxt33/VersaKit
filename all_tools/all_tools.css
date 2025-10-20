@@ -206,7 +206,7 @@ html {
     border-bottom-color: #ffc107;
 }
 
-.finance .category-title {
+.calculators .category-title {
     color: #28a745;
     border-bottom-color: #28a745;
 }
@@ -252,7 +252,7 @@ html {
     border-color: #ffc107;
 }
 
-.finance .box:hover {
+.calculators .box:hover {
     border-color: #28a745;
 }
 

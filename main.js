@@ -49,12 +49,12 @@ const toolsDict = {
     'group_generator': { name: 'Group Generator', category: 'generators' },
     'mock_data_generator': { name: 'Mock Data Generator', category: 'generators' },
     
-    // Finance
-    'mortgage_calculator': { name: 'Mortgage Calculator', category: 'finance' },
-    'comp_interest': { name: 'Compound Interest Calculator', category: 'finance' },
-    'retirement_calculator': { name: 'Retirement Calculator', category: 'finance' },
-    'EMI_calculator': { name: 'EMI Calculator', category: 'finance' },
-    'ROI_calculator': { name: 'ROI Calculator', category: 'finance' },
+    // Calculators
+    'mortgage_calculator': { name: 'Mortgage Calculator', category: 'calculators' },
+    'comp_interest': { name: 'Compound Interest Calculator', category: 'calculators' },
+    'retirement_calculator': { name: 'Retirement Calculator', category: 'calculators' },
+    'EMI_calculator': { name: 'EMI Calculator', category: 'calculators' },
+    'ROI_calculator': { name: 'ROI Calculator', category: 'calculators' },
     
     // Others
     'counter': { name: 'Counter', category: 'others' },
@@ -103,7 +103,7 @@ function performSearch() {
     const categoryColors = {
         'converters': '#007bff',    
         'generators': '#ffc107',    
-        'finance': '#28a745',     
+        'calculators': '#28a745',     
         'others': '#6f42c1'      
     };
     
