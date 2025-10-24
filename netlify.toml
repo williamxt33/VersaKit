@@ -1,158 +1,158 @@
 # Calculators old URLs → new URLs
 [[redirects]]
-  from = "/calculators/BMI_calculators/BMI_calculators.html"
+  from = "/calculators/BMI_calculators/"
   to = "/calculators/bmi"
   status = 301
 
 [[redirects]]
-  from = "/calculators/comp_interest/comp_interest.html"
+  from = "/calculators/comp_interest/"
   to = "/calculators/compound-interest"
   status = 301
 
 [[redirects]]
-  from = "/calculators/EMI_calculator/EMI_calculator.html"
+  from = "/calculators/EMI_calculator/"
   to = "/calculators/emi"
   status = 301
 
 [[redirects]]
-  from = "/calculators/mortgage_calculator/mortgage_calculator.html"
+  from = "/calculators/mortgage_calculator/"
   to = "/calculators/mortgage"
   status = 301
 
 [[redirects]]
-  from = "/calculators/retirement_calculator/retirement_calculator.html"
+  from = "/calculators/retirement_calculator/"
   to = "/calculators/retirement"
   status = 301
 
 [[redirects]]
-  from = "/calculators/ROI_calculator/ROI_calculator.html"
+  from = "/calculators/ROI_calculator/"
   to = "/calculators/roi"
   status = 301
 
 # Converters old URLs → new URLs
 [[redirects]]
-  from = "/converters/angle_converter/angle_converter.html"
+  from = "/converters/angle_converter/"
   to = "/converters/angle"
   status = 301
 
 [[redirects]]
-  from = "/converters/area_converter/area_converter.html"
+  from = "/converters/area_converter/"
   to = "/converters/area"
   status = 301
 
 [[redirects]]
-  from = "/converters/currency_converter/currency_converter.html"
+  from = "/converters/currency_converter/"
   to = "/converters/currency"
   status = 301
 
 [[redirects]]
-  from = "/converters/density_converter/density_converter.html"
+  from = "/converters/density_converter/"
   to = "/converters/density"
   status = 301
 
 [[redirects]]
-  from = "/converters/energy_converter/energy_converter.html"
+  from = "/converters/energy_converter/"
   to = "/converters/energy"
   status = 301
 
 [[redirects]]
-  from = "/converters/file_converter/file_converter.html"
+  from = "/converters/file_converter/"
   to = "/converters/file"
   status = 301
 
 [[redirects]]
-  from = "/converters/force_converter/force_converter.html"
+  from = "/converters/force_converter/"
   to = "/converters/force"
   status = 301
 
 [[redirects]]
-  from = "/converters/length_converter/length_converter.html"
+  from = "/converters/length_converter/"
   to = "/converters/length"
   status = 301
 
 [[redirects]]
-  from = "/converters/power_converter/power_converter.html"
+  from = "/converters/power_converter/"
   to = "/converters/power"
   status = 301
 
 [[redirects]]
-  from = "/converters/pressure_converter/pressure_converter.html"
+  from = "/converters/pressure_converter/"
   to = "/converters/pressure"
   status = 301
 
 [[redirects]]
-  from = "/converters/speed_converter/speed_converter.html"
+  from = "/converters/speed_converter/"
   to = "/converters/speed"
   status = 301
 
 [[redirects]]
-  from = "/converters/temperature_converter/temperature_converter.html"
+  from = "/converters/temperature_converter/"
   to = "/converters/temperature"
   status = 301
 
 [[redirects]]
-  from = "/converters/viscosity_converter/viscosity_converter.html"
+  from = "/converters/viscosity_converter/"
   to = "/converters/viscosity"
   status = 301
 
 [[redirects]]
-  from = "/converters/volume_converter/volume_converter.html"
+  from = "/converters/volume_converter/"
   to = "/converters/volume"
   status = 301
 
 [[redirects]]
-  from = "/converters/weight_converter/weight_converter.html"
+  from = "/converters/weight_converter/"
   to = "/converters/weight"
   status = 301
 
 [[redirects]]
-  from = "/converters/morse_code_converter/morse_code_converter.html"
+  from = "/converters/morse_code_converter/"
   to = "/converters/morse-code"
   status = 301
 
 # Generators old URLs → new URLs
 [[redirects]]
-  from = "/generators/bar_code_generator/bar_code_generator.html"
+  from = "/generators/bar_code_generator/"
   to = "/generators/barcode"
   status = 301
 
 [[redirects]]
-  from = "/generators/group_generator/group_generator.html"
+  from = "/generators/group_generator/"
   to = "/generators/group"
   status = 301
 
 [[redirects]]
-  from = "/generators/mock_data_generator/mock_data_generator.html"
+  from = "/generators/mock_data_generator/"
   to = "/generators/mock-data"
   status = 301
 
 [[redirects]]
-  from = "/generators/password_generator/password_generator.html"
+  from = "/generators/password_generator/"
   to = "/generators/password"
   status = 301
 
 [[redirects]]
-  from = "/generators/QRcode_generator/QRcode_generator.html"
+  from = "/generators/QRcode_generator/"
   to = "/generators/qr-code"
   status = 301
 
 # Others old URLs → new URLs
 [[redirects]]
-  from = "/others/coin_flip/coin_flip.html"
+  from = "/others/coin_flip/"
   to = "/others/coin-flip"
   status = 301
 
 [[redirects]]
-  from = "/others/counter/counter.html"
+  from = "/others/counter/"
   to = "/others/counter"
   status = 301
 
 [[redirects]]
-  from = "/others/dice_roll/dice_roll.html"
+  from = "/others/dice_roll/"
   to = "/others/dice-roll"
   status = 301
 
 [[redirects]]
-  from = "/others/wheel_spinner/wheel_spinner.html"
+  from = "/others/wheel_spinner/"
   to = "/others/wheel-spinner"
   status = 301
