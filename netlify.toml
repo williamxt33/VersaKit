@@ -1,0 +1,158 @@
+# Calculators old URLs → new URLs
+[[redirects]]
+  from = "/calculators/BMI_calculators/BMI_calculators.html"
+  to = "/calculators/bmi"
+  status = 301
+
+[[redirects]]
+  from = "/calculators/comp_interest/comp_interest.html"
+  to = "/calculators/compound-interest"
+  status = 301
+
+[[redirects]]
+  from = "/calculators/EMI_calculator/EMI_calculator.html"
+  to = "/calculators/emi"
+  status = 301
+
+[[redirects]]
+  from = "/calculators/mortgage_calculator/mortgage_calculator.html"
+  to = "/calculators/mortgage"
+  status = 301
+
+[[redirects]]
+  from = "/calculators/retirement_calculator/retirement_calculator.html"
+  to = "/calculators/retirement"
+  status = 301
+
+[[redirects]]
+  from = "/calculators/ROI_calculator/ROI_calculator.html"
+  to = "/calculators/roi"
+  status = 301
+
+# Converters old URLs → new URLs
+[[redirects]]
+  from = "/converters/angle_converter/angle_converter.html"
+  to = "/converters/angle"
+  status = 301
+
+[[redirects]]
+  from = "/converters/area_converter/area_converter.html"
+  to = "/converters/area"
+  status = 301
+
+[[redirects]]
+  from = "/converters/currency_converter/currency_converter.html"
+  to = "/converters/currency"
+  status = 301
+
+[[redirects]]
+  from = "/converters/density_converter/density_converter.html"
+  to = "/converters/density"
+  status = 301
+
+[[redirects]]
+  from = "/converters/energy_converter/energy_converter.html"
+  to = "/converters/energy"
+  status = 301
+
+[[redirects]]
+  from = "/converters/file_converter/file_converter.html"
+  to = "/converters/file"
+  status = 301
+
+[[redirects]]
+  from = "/converters/force_converter/force_converter.html"
+  to = "/converters/force"
+  status = 301
+
+[[redirects]]
+  from = "/converters/length_converter/length_converter.html"
+  to = "/converters/length"
+  status = 301
+
+[[redirects]]
+  from = "/converters/power_converter/power_converter.html"
+  to = "/converters/power"
+  status = 301
+
+[[redirects]]
+  from = "/converters/pressure_converter/pressure_converter.html"
+  to = "/converters/pressure"
+  status = 301
+
+[[redirects]]
+  from = "/converters/speed_converter/speed_converter.html"
+  to = "/converters/speed"
+  status = 301
+
+[[redirects]]
+  from = "/converters/temperature_converter/temperature_converter.html"
+  to = "/converters/temperature"
+  status = 301
+
+[[redirects]]
+  from = "/converters/viscosity_converter/viscosity_converter.html"
+  to = "/converters/viscosity"
+  status = 301
+
+[[redirects]]
+  from = "/converters/volume_converter/volume_converter.html"
+  to = "/converters/volume"
+  status = 301
+
+[[redirects]]
+  from = "/converters/weight_converter/weight_converter.html"
+  to = "/converters/weight"
+  status = 301
+
+[[redirects]]
+  from = "/converters/morse_code_converter/morse_code_converter.html"
+  to = "/converters/morse-code"
+  status = 301
+
+# Generators old URLs → new URLs
+[[redirects]]
+  from = "/generators/bar_code_generator/bar_code_generator.html"
+  to = "/generators/barcode"
+  status = 301
+
+[[redirects]]
+  from = "/generators/group_generator/group_generator.html"
+  to = "/generators/group"
+  status = 301
+
+[[redirects]]
+  from = "/generators/mock_data_generator/mock_data_generator.html"
+  to = "/generators/mock-data"
+  status = 301
+
+[[redirects]]
+  from = "/generators/password_generator/password_generator.html"
+  to = "/generators/password"
+  status = 301
+
+[[redirects]]
+  from = "/generators/QRcode_generator/QRcode_generator.html"
+  to = "/generators/qr-code"
+  status = 301
+
+# Others old URLs → new URLs
+[[redirects]]
+  from = "/others/coin_flip/coin_flip.html"
+  to = "/others/coin-flip"
+  status = 301
+
+[[redirects]]
+  from = "/others/counter/counter.html"
+  to = "/others/counter"
+  status = 301
+
+[[redirects]]
+  from = "/others/dice_roll/dice_roll.html"
+  to = "/others/dice-roll"
+  status = 301
+
+[[redirects]]
+  from = "/others/wheel_spinner/wheel_spinner.html"
+  to = "/others/wheel-spinner"
+  status = 301
