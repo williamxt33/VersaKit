@@ -1,0 +1,55 @@
+# robots.txt for VersaKit - https://versakit.com
+
+# Allow all search engine bots
+User-agent: *
+Allow: /
+
+# Explicitly allow main sections
+Allow: /about/
+Allow: /contact/
+Allow: /all_tools/
+Allow: /policy/
+
+# Allow tool categories
+Allow: /calculators/
+Allow: /converters/
+Allow: /generators/
+Allow: /others/
+
+# Disallow any temporary or development files (if they exist)
+Disallow: /temp/
+Disallow: /dev/
+Disallow: /_draft/
+Disallow: /backup/
+Disallow: /*.bak$
+
+# Disallow common non-public directories
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://versakit.com/sitemap.xml
+
+# Optional: Crawl-delay for polite crawling (remove if not needed)
+# Crawl-delay: 10
+
+# Google-specific settings
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+# Bing-specific settings
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+# 
+# User-agent: SemrushBot
+# Disallow: /
+# 
+# User-agent: MJ12bot
+# Disallow: /

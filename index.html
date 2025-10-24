@@ -30,28 +30,30 @@
     <link rel="icon" type="image/png" href="/img/logo_icon.png" />
     <link rel="apple-touch-icon" href="/img/logo_icon.png" />
 
-    <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "VersaKit",
-      "alternateName": "VersaKit - Online Tools Collection",
-      "url": "https://VersaKit.netlify.app/",
-      "description": "A comprehensive collection of simple yet practical online tools including counters, dice rollers, password generators, temperature converters, BMI calculators, age calculators, and unit converters. All tools are free to use and designed to handle your daily digital needs efficiently.",
-      "publisher": {
-        "@type": "Person",
-        "name": "William Yen",
-        "jobTitle": "Web Developer"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://VersaKit.netlify.app/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "sameAs": [
-        "https://github.com/williamyen/VersaKit"
-      ]
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "VersaKit",
+        "alternateName": "VersaKit - Online Tools Collection",
+        "url": "https://versakit.com/",  
+        "description": "A comprehensive collection of simple yet practical online tools including counters, dice rollers, password generators, temperature converters, BMI calculators, age calculators, and unit converters. All tools are free to use and designed to handle your daily digital needs efficiently.",
+        "publisher": {
+            "@type": "Organization",  
+            "name": "VersaKit",
+            "founder": {
+                "@type": "Person",
+                "name": "William Yen"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+                "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://versakit.com/all_tools/all_tools.html?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
 
