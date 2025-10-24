@@ -27,10 +27,8 @@ const toolsDict = {
     'morse_code_converter': { name: 'Morse Code Converter', category: 'converters' },
     'length_converter': { name: 'Length Converter', category: 'converters' },
     'weight_converter': { name: 'Weight Converter', category: 'converters' },
-    'age_converter': { name: 'Age Converter', category: 'converters' },
     'currency_converter': { name: 'Currency Converter', category: 'converters' },
     'file_converter': { name: 'File Converter', category: 'converters' },
-    'BMI_calculator': { name: 'BMI Calculator', category: 'converters' },
     'speed_converter': { name: 'Speed Converter', category: 'converters' },
     'angle_converter': { name: 'Angle Converter', category: 'converters' },
     'area_converter': { name: 'Area Converter', category: 'converters' },
@@ -50,6 +48,8 @@ const toolsDict = {
     'mock_data_generator': { name: 'Mock Data Generator', category: 'generators' },
     
     // Calculators
+    'BMI_calculator': { name: 'BMI Calculator', category: 'calculators' },
+    'age_converter': { name: 'Age Converter', category: 'calculators' },
     'mortgage_calculator': { name: 'Mortgage Calculator', category: 'calculators' },
     'comp_interest': { name: 'Compound Interest Calculator', category: 'calculators' },
     'retirement_calculator': { name: 'Retirement Calculator', category: 'calculators' },

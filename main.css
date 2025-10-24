@@ -128,6 +128,7 @@ body {
     background: rgb(0, 123, 0255);
     border-radius: 5px;
     padding: 10px 15px;
+    margin-bottom: 10px;
 }
 
 #allTools-btn:hover{
@@ -503,6 +504,7 @@ body {
     padding: 2rem 0;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 0;
 }
 
 .setion {
@@ -579,37 +581,7 @@ footer a{
     font-size: 0.9rem;
 }
 
-.all_tools_btn {
-    background: #007bff;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 300px;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
-}
 
-.all_tools_btn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
-.all_tools_btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
-}
-
-.all_tools_btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-}
 
 /* Responsive Design */
 @media (min-width: 768px) {
