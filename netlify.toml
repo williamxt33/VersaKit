@@ -59,6 +59,12 @@
   to = "/calculators/BMI_calculators/BMI_calculators.html"
   status = 200
   force = true
+  conditions = {Language = ["en"]}
+  
+[[headers]]
+  for = "/calculators/bmi"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
 
 [[redirects]]
   from = "/calculators/compound-interest"
