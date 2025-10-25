@@ -567,12 +567,14 @@ body {
     background: rgb(0, 123, 0255);
     border: none;
     border-radius: 5px;
-    padding: 13px 30px;
+    padding: 13px 50px;
     margin-bottom: 10px;
     color: #ffffff;
     transition:0.5s ease;
-    width: 10vw;
+    width: 15vw;
     cursor: pointer;
+    font-size: 1.1em;
+    white-space: nowrap;
 }
 
 .all_tools_btn:hover{
