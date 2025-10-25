@@ -21,6 +21,12 @@
 # ============================================
 
 [[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/about"
   to = "/about/about.html"
   status = 200
@@ -263,6 +269,12 @@
 # ============================================
 
 # Main pages
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/about/about.html"
   to = "/about"
