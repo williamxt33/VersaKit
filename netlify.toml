@@ -56,13 +56,13 @@
 
 [[redirects]]
   from = "/calculators/age"
-  to = "/calculators/age_calculators/age_calculators.html"
+  to = "/calculators/age_calculator/age_calculator.html"
   status = 200
   force = true
 
 [[redirects]]
   from = "/calculators/bmi"
-  to = "/calculators/BMI_calculators/BMI_calculators.html"
+  to = "/calculators/BMI_calculator/BMI_calculator.html"
   status = 200
   force = true
   conditions = {Language = ["en"]}
@@ -301,13 +301,13 @@
 
 # Calculators - old to new
 [[redirects]]
-  from = "/calculators/age_calculators/age_calculators.html"
+  from = "/calculators/age_calculator/age_calculator.html"
   to = "/calculators/age"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/calculators/BMI_calculators/BMI_calculators.html"
+  from = "/calculators/BMI_calculator/BMI_calculator.html"
   to = "/calculators/bmi"
   status = 301
   force = true

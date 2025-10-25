@@ -49,7 +49,7 @@ const toolsDict = {
     
     // Calculators
     'BMI_calculator': { name: 'BMI Calculator', category: 'calculators' },
-    'age_converter': { name: 'Age Converter', category: 'calculators' },
+    'age_calculator': { name: 'Age Calculator', category: 'calculators' },
     'mortgage_calculator': { name: 'Mortgage Calculator', category: 'calculators' },
     'comp_interest': { name: 'Compound Interest Calculator', category: 'calculators' },
     'retirement_calculator': { name: 'Retirement Calculator', category: 'calculators' },
