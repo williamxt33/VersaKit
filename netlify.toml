@@ -1,0 +1,487 @@
+[build]
+  publish = "."
+  
+# Pretty URLs - automatically removes .html extension
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# ============================================
+# MAIN PAGES - Clean URL Rewrites
+# ============================================
+
+[[redirects]]
+  from = "/about"
+  to = "/about/about.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/contact.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/all-tools"
+  to = "/all_tools/all_tools.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/policy"
+  to = "/policy/policy.html"
+  status = 200
+  force = true
+
+# ============================================
+# CALCULATORS - Clean URL Rewrites
+# ============================================
+
+[[redirects]]
+  from = "/calculators/age"
+  to = "/calculators/age_calculators/age_calculators.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/bmi"
+  to = "/calculators/BMI_calculators/BMI_calculators.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/compound-interest"
+  to = "/calculators/comp_interest/comp_interest.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/emi"
+  to = "/calculators/EMI_calculator/EMI_calculator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/mortgage"
+  to = "/calculators/mortgage_calculator/mortgage_calculator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/retirement"
+  to = "/calculators/retirement_calculator/retirement_calculator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/calculators/roi"
+  to = "/calculators/ROI_calculator/ROI_calculator.html"
+  status = 200
+  force = true
+
+# ============================================
+# CONVERTERS - Clean URL Rewrites
+# ============================================
+
+[[redirects]]
+  from = "/converters/angle"
+  to = "/converters/angle_converter/angle_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/area"
+  to = "/converters/area_converter/area_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/currency"
+  to = "/converters/currency_converter/currency_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/density"
+  to = "/converters/density_converter/density_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/energy"
+  to = "/converters/energy_converter/energy_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/file"
+  to = "/converters/file_converter/file_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/force"
+  to = "/converters/force_converter/force_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/length"
+  to = "/converters/length_converter/length_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/morse-code"
+  to = "/converters/morse_code_converter/morse_code_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/power"
+  to = "/converters/power_converter/power_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/pressure"
+  to = "/converters/pressure_converter/pressure_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/speed"
+  to = "/converters/speed_converter/speed_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/temperature"
+  to = "/converters/temperature_converter/temperature_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/viscosity"
+  to = "/converters/viscosity_converter/viscosity_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/volume"
+  to = "/converters/volume_converter/volume_converter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/converters/weight"
+  to = "/converters/weight_converter/weight_converter.html"
+  status = 200
+  force = true
+
+# ============================================
+# GENERATORS - Clean URL Rewrites
+# ============================================
+
+[[redirects]]
+  from = "/generators/barcode"
+  to = "/generators/bar_code_generator/bar_code_generator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/generators/group"
+  to = "/generators/group_generator/group_generator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/generators/mock-data"
+  to = "/generators/mock_data_generator/mock_data_generator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/generators/password"
+  to = "/generators/password_generator/password_generator.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/generators/qr-code"
+  to = "/generators/QRcode_generator/QRcode_generator.html"
+  status = 200
+  force = true
+
+# ============================================
+# OTHERS - Clean URL Rewrites
+# ============================================
+
+[[redirects]]
+  from = "/others/coin-flip"
+  to = "/others/coin_flip/coin_flip.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/others/counter"
+  to = "/others/counter/counter.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/others/dice-roll"
+  to = "/others/dice_roll/dice_roll.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/others/wheel-spinner"
+  to = "/others/wheel_spinner/wheel_spinner.html"
+  status = 200
+  force = true
+
+# ============================================
+# PERMANENT REDIRECTS (301) - Old to New URLs
+# ============================================
+
+# Main pages
+[[redirects]]
+  from = "/about/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/all_tools/all_tools.html"
+  to = "/all-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/policy/policy.html"
+  to = "/policy"
+  status = 301
+  force = true
+
+# Calculators - old to new
+[[redirects]]
+  from = "/calculators/age_calculators/age_calculators.html"
+  to = "/calculators/age"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/BMI_calculators/BMI_calculators.html"
+  to = "/calculators/bmi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/comp_interest/comp_interest.html"
+  to = "/calculators/compound-interest"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/EMI_calculator/EMI_calculator.html"
+  to = "/calculators/emi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/mortgage_calculator/mortgage_calculator.html"
+  to = "/calculators/mortgage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/retirement_calculator/retirement_calculator.html"
+  to = "/calculators/retirement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/ROI_calculator/ROI_calculator.html"
+  to = "/calculators/roi"
+  status = 301
+  force = true
+
+# Converters - old to new
+[[redirects]]
+  from = "/converters/angle_converter/angle_converter.html"
+  to = "/converters/angle"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/area_converter/area_converter.html"
+  to = "/converters/area"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/currency_converter/currency_converter.html"
+  to = "/converters/currency"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/density_converter/density_converter.html"
+  to = "/converters/density"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/energy_converter/energy_converter.html"
+  to = "/converters/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/file_converter/file_converter.html"
+  to = "/converters/file"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/force_converter/force_converter.html"
+  to = "/converters/force"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/length_converter/length_converter.html"
+  to = "/converters/length"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/morse_code_converter/morse_code_converter.html"
+  to = "/converters/morse-code"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/power_converter/power_converter.html"
+  to = "/converters/power"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/pressure_converter/pressure_converter.html"
+  to = "/converters/pressure"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/speed_converter/speed_converter.html"
+  to = "/converters/speed"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/temperature_converter/temperature_converter.html"
+  to = "/converters/temperature"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/viscosity_converter/viscosity_converter.html"
+  to = "/converters/viscosity"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/volume_converter/volume_converter.html"
+  to = "/converters/volume"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/converters/weight_converter/weight_converter.html"
+  to = "/converters/weight"
+  status = 301
+  force = true
+
+# Generators - old to new
+[[redirects]]
+  from = "/generators/bar_code_generator/bar_code_generator.html"
+  to = "/generators/barcode"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generators/group_generator/group_generator.html"
+  to = "/generators/group"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generators/mock_data_generator/mock_data_generator.html"
+  to = "/generators/mock-data"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generators/password_generator/password_generator.html"
+  to = "/generators/password"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generators/QRcode_generator/QRcode_generator.html"
+  to = "/generators/qr-code"
+  status = 301
+  force = true
+
+# Others - old to new
+[[redirects]]
+  from = "/others/coin_flip/coin_flip.html"
+  to = "/others/coin-flip"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/others/counter/counter.html"
+  to = "/others/counter"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/others/dice_roll/dice_roll.html"
+  to = "/others/dice-roll"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/others/wheel_spinner/wheel_spinner.html"
+  to = "/others/wheel-spinner"
+  status = 301
+  force = true
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
