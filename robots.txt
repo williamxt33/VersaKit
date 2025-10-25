@@ -4,11 +4,11 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow main sections
-Allow: /about/
-Allow: /contact/
-Allow: /all_tools/
-Allow: /policy/
+# Explicitly allow main sections (clean URLs)
+Allow: /about
+Allow: /contact
+Allow: /all-tools
+Allow: /policy
 
 # Allow tool categories
 Allow: /calculators/
@@ -16,7 +16,17 @@ Allow: /converters/
 Allow: /generators/
 Allow: /others/
 
-# Disallow any temporary or development files (if they exist)
+# Disallow old URL patterns (prevent duplicate indexing)
+Disallow: /about/about.html
+Disallow: /contact/contact.html
+Disallow: /all_tools/all_tools.html
+Disallow: /policy/policy.html
+Disallow: /calculators/*/*.html
+Disallow: /converters/*/*.html
+Disallow: /generators/*/*.html
+Disallow: /others/*/*.html
+
+# Disallow temporary or development files
 Disallow: /temp/
 Disallow: /dev/
 Disallow: /_draft/
@@ -30,9 +40,6 @@ Disallow: /private/
 
 # Sitemap location
 Sitemap: https://versakit.com/sitemap.xml
-
-# Optional: Crawl-delay for polite crawling (remove if not needed)
-# Crawl-delay: 10
 
 # Google-specific settings
 User-agent: Googlebot

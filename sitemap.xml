@@ -12,21 +12,21 @@
 
     <!-- High-value landing pages -->
     <url>
-        <loc>https://versakit.com/all_tools/all_tools.html</loc>
+        <loc>https://versakit.com/all-tools</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://versakit.com/about/about.html</loc>
+        <loc>https://versakit.com/about</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://versakit.com/contact/contact.html</loc>
+        <loc>https://versakit.com/contact</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -34,43 +34,43 @@
 
     <!-- Calculators - Popular tools get higher priority -->
     <url>
-        <loc>https://versakit.com/calculators/BMI_calculators/BMI_calculators.html</loc>
+        <loc>https://versakit.com/calculators/bmi</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/mortgage_calculator/mortgage_calculator.html</loc>
+        <loc>https://versakit.com/calculators/mortgage</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/EMI_calculator/EMI_calculator.html</loc>
+        <loc>https://versakit.com/calculators/emi</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/age_calculators/age_calculators.html</loc>
+        <loc>https://versakit.com/calculators/age</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/retirement_calculator/retirement_calculator.html</loc>
+        <loc>https://versakit.com/calculators/retirement</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/comp_interest/comp_interest.html</loc>
+        <loc>https://versakit.com/calculators/compound-interest</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/calculators/ROI_calculator/ROI_calculator.html</loc>
+        <loc>https://versakit.com/calculators/roi</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -78,97 +78,97 @@
 
     <!-- Converters - High search volume tools -->
     <url>
-        <loc>https://versakit.com/converters/currency_converter/currency_converter.html</loc>
+        <loc>https://versakit.com/converters/currency</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/temperature_converter/temperature_converter.html</loc>
+        <loc>https://versakit.com/converters/temperature</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/length_converter/length_converter.html</loc>
+        <loc>https://versakit.com/converters/length</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/weight_converter/weight_converter.html</loc>
+        <loc>https://versakit.com/converters/weight</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/area_converter/area_converter.html</loc>
+        <loc>https://versakit.com/converters/area</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/volume_converter/volume_converter.html</loc>
+        <loc>https://versakit.com/converters/volume</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/speed_converter/speed_converter.html</loc>
+        <loc>https://versakit.com/converters/speed</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/file_converter/file_converter.html</loc>
+        <loc>https://versakit.com/converters/file</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/energy_converter/energy_converter.html</loc>
+        <loc>https://versakit.com/converters/energy</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/power_converter/power_converter.html</loc>
+        <loc>https://versakit.com/converters/power</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/pressure_converter/pressure_converter.html</loc>
+        <loc>https://versakit.com/converters/pressure</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/force_converter/force_converter.html</loc>
+        <loc>https://versakit.com/converters/force</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/angle_converter/angle_converter.html</loc>
+        <loc>https://versakit.com/converters/angle</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/density_converter/density_converter.html</loc>
+        <loc>https://versakit.com/converters/density</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/viscosity_converter/viscosity_converter.html</loc>
+        <loc>https://versakit.com/converters/viscosity</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/converters/morse_code_converter/morse_code_converter.html</loc>
+        <loc>https://versakit.com/converters/morse-code</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -176,31 +176,31 @@
 
     <!-- Generators -->
     <url>
-        <loc>https://versakit.com/generators/password_generator/password_generator.html</loc>
+        <loc>https://versakit.com/generators/password</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/generators/QRcode_generator/QRcode_generator.html</loc>
+        <loc>https://versakit.com/generators/qr-code</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://versakit.com/generators/bar_code_generator/bar_code_generator.html</loc>
+        <loc>https://versakit.com/generators/barcode</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/generators/mock_data_generator/mock_data_generator.html</loc>
+        <loc>https://versakit.com/generators/mock-data</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://versakit.com/generators/group_generator/group_generator.html</loc>
+        <loc>https://versakit.com/generators/group</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -208,25 +208,25 @@
 
     <!-- Others -->
     <url>
-        <loc>https://versakit.com/others/counter/counter.html</loc>
+        <loc>https://versakit.com/others/counter</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/others/dice_roll/dice_roll.html</loc>
+        <loc>https://versakit.com/others/dice-roll</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/others/coin_flip/coin_flip.html</loc>
+        <loc>https://versakit.com/others/coin-flip</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://versakit.com/others/wheel_spinner/wheel_spinner.html</loc>
+        <loc>https://versakit.com/others/wheel-spinner</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -234,7 +234,7 @@
 
     <!-- Policy page -->
     <url>
-        <loc>https://versakit.com/policy/policy.html</loc>
+        <loc>https://versakit.com/policy</loc>
         <lastmod>2025-10-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
