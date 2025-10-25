@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+    <base href="/">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,8 +15,8 @@
     <meta property="og:title" content="VersaKit - Comprehensive Collection of Practical Online Tools" />
     <meta property="og:description" content="Access a wide range of simple yet powerful online utilities designed to streamline your daily tasks. From counters and calculators to generators and converters - all free and easy to use." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://VersaKit.netlify.app/" />
-    <meta property="og:image" content="https://VersaKit.netlify.app/main/counter.png" />
+    <meta property="og:url" content="https://versakit.com/" />
+    <meta property="og:image" content="https://versakit.com/main/counter.png" />
     <meta property="og:site_name" content="VersaKit" />
     <meta property="og:locale" content="en_US" />
 
@@ -23,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="VersaKit - Comprehensive Collection of Practical Online Tools" />
     <meta name="twitter:description" content="Access a wide range of simple yet powerful online utilities designed to streamline your daily tasks. All free and easy to use." />
-    <meta name="twitter:image" content="https://VersaKit.netlify.app/main/counter.png" />
+    <meta name="twitter:image" content="https://versakit.com/main/counter.png" />
     <meta name="twitter:creator" content="@williamyen" />
 
     <!-- Favicon -->
@@ -50,7 +51,7 @@
             "@type": "SearchAction",
                 "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://versakit.com/all_tools/all_tools.html?q={search_term_string}"
+                "urlTemplate": "https://versakit.com/all-tools?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
         }
@@ -65,9 +66,9 @@
     <aside class="side-menu" id="side-menu">
         <nav>
             <ul>
-                <li><a href="/about/about.html">About</a></li>
-                <li><a href="/contact/contact.html">Contact</a></li>
-                <li><a href="/all_tools/all_tools.html">All Tools</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/all-tools">All Tools</a></li>
             </ul>
         </nav>
     </aside>
@@ -79,12 +80,12 @@
             <div id="bar3" class="bar"></div>
         </div>
 
-        <img class="logo" src="img/logo.png" onclick="window.location.href='../index.html'">
+        <img class="logo" src="img/logo.png" onclick="window.location.href='/'">
 
         <nav class="nav-links">
-            <a href="/about/about.html">About</a>
-            <a href="/contact/contact.html">Contact</a>
-            <a href="/all_tools/all_tools.html" id="allTools-btn" style="color: white;">All Tools</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/all-tools" id="allTools-btn" style="color: white;">All Tools</a>
         </nav>
     </header>
 
@@ -110,7 +111,7 @@
                 </p>
                 
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="window.location.href='/all_tools/all_tools.html'">Explore Tools</button>
+                    <button class="btn btn-primary" onclick="window.location.href='/all-tools'">Explore Tools</button>
                     <a class="btn btn-secondary" href="#search">Learn More</a>
                 </div>
                 
@@ -138,56 +139,56 @@
                 </span>
 
                 <div class="search_suggest">
-                    <button class="search_suggest_btn" onclick="window.location.href='/converters/currency_converter/currency_converter.html'">currency converter</button>
-                    <button class="search_suggest_btn" onclick="window.location.href='/calculators/retirement_calculator/retirement_calculator.html'">retirement calculator</button>
-                    <button class="search_suggest_btn" onclick="window.location.href='/generators/QRcode_generator/QRcode_generator.html'">qrcode generator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/converters/currency'">currency converter</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/calculators/retirement'">retirement calculator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/qr-code'">qrcode generator</button>
                     <br>
-                    <button class="search_suggest_btn" onclick="window.location.href='/generators/group_generator/group_generator.html'">group generator</button>
-                    <button class="search_suggest_btn" onclick="window.location.href='/calculators/mortgage_calculator/mortgage_calculator.html'">mortgage calculator</button>
-                    <button class="search_suggest_btn" onclick="window.location.href='/generators/password_generator/password_generator.html'">password generator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/group'">group generator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/calculators/mortgage'">mortgage calculator</button>
+                    <button class="search_suggest_btn" onclick="window.location.href='/generators/password'">password generator</button>
                 </div>
             </div>
 
             <section class="labels">
-                <article class="setion" onclick="window.location.href='/all_tools/all_tools.html#converter_category'">
+                <article class="setion" onclick="window.location.href='/all-tools#converter_category'">
                     <img src="img/loop (1).png">
                     <h2>Converter</h2>
-                    <a href="/converters/length_converter/length_converter.html">Length Converter</a>
-                    <a href="/converters/morse_code_converter/morse_code_converter.html">Morse Code Converter</a>
-                    <a href="/converters/temperature_converter/temperature_converter.html">Temperature Converter</a>
-                    <a href="/converters/currency_converter/currency_converter.html">Currency Converter</a>
+                    <a href="/converters/length">Length Converter</a>
+                    <a href="/converters/morse-code">Morse Code Converter</a>
+                    <a href="/converters/temperature">Temperature Converter</a>
+                    <a href="/converters/currency">Currency Converter</a>
                 </article>
 
-                <article class="setion" onclick="window.location.href='/all_tools/all_tools.html#generator_category'">
+                <article class="setion" onclick="window.location.href='/all-tools#generator_category'">
                     <img src="img/creative.png">
                     <h2>Generator</h2>
-                    <a href="/generators/password_generator/password_generator.html">Password Generator</a>
-                    <a href="/generators/QRcode_generator/QRcode_generator.html">QR Code Generator</a>
-                    <a href="/generators/bar_code_generator/bar_code_generator.html">Bar Code Generator</a>
-                    <a href="/generators/group_generator/group_generator.html">Group Generator</a>
+                    <a href="/generators/password">Password Generator</a>
+                    <a href="/generators/qr-code">QR Code Generator</a>
+                    <a href="/generators/barcode">Bar Code Generator</a>
+                    <a href="/generators/group">Group Generator</a>
                 </article>
 
-                <article class="setion" onclick="window.location.href='/all_tools/all_tools.html#calculators_category'">
+                <article class="setion" onclick="window.location.href='/all-tools#calculators_category'">
                     <img src="img/thinking.png">
                     <h2>Calculator</h2>
-                    <a href="/calculators/BMI_calculators/BMI_calculators.html">BMI Caculator</a>
-                    <a href="/calculators/age_calculators/age_calculators.html">Age Calculator</a>
-                    <a href="/calculators/mortgage_calculator/mortgage_calculator.html">Mortgage Calculator</a>
-                    <a href="/calculators/retirement_calculator/retirement_calculator.html">Retirement Calculator</a>
+                    <a href="/calculators/bmi">BMI Caculator</a>
+                    <a href="/calculators/age">Age Calculator</a>
+                    <a href="/calculators/mortgage">Mortgage Calculator</a>
+                    <a href="/calculators/retirement">Retirement Calculator</a>
                 </article>
 
-                <article class="setion" onclick="window.location.href='/all_tools/all_tools.html#others_category'">
+                <article class="setion" onclick="window.location.href='/all-tools#others_category'">
                     <img src="img/menu.png">
                     <h2>Others</h2>
-                    <a href="/others/counter/counter.html">Counter</a>
-                    <a href="/others/dice_roll/dice_roll.html">Dice Roll</a>
-                    <a href="/others/coin_flip/coin_flip.html">Coin Flip</a>
-                    <a href="/others/wheel_spinner/wheel_spinner.html">Wheel Spinner</a>
+                    <a href="/others/counter">Counter</a>
+                    <a href="/others/dice-roll">Dice Roll</a>
+                    <a href="/others/coin-flip">Coin Flip</a>
+                    <a href="/others/wheel-spinner">Wheel Spinner</a>
                 </article>
             </section>
         </section>
 
-        <button class="all_tools_btn" onclick="window.location.href = '/all_tools/all_tools.html'">All tools</button>
+        <button class="all_tools_btn" onclick="window.location.href = '/all-tools'">All tools</button>
 
         <footer>
             <p style="max-width: 1000px; text-align: center;">
@@ -195,10 +196,10 @@
             </p>
             <p class="foot-word">
                 VersaKit &copy; 2025 – All Rights Reserved | 
-                <a href="/about/about.html">about us</a> | 
-                <a href="/policy/policy.html#general-policy">policy</a> | 
-                <a href="/policy/policy.html#terms-of-use">term of use</a> | 
-                <a href="/policy/policy.html#privacy-policy">privacy policy</a>
+                <a href="/about">about us</a> | 
+                <a href="/policy#general-policy">policy</a> | 
+                <a href="/policy#terms-of-use">term of use</a> | 
+                <a href="/policy#privacy-policy">privacy policy</a>
             </p>
         </footer>
     </main>
