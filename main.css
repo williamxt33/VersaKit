@@ -662,6 +662,11 @@ footer a{
         font-size: 0.8rem;
         padding: 6px 12px;
     }
+
+    .hero-content{
+        margin-bottom: -100px;
+    }
+
 }
 
 @media (max-width: 480px) {
