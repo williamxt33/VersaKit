@@ -37,11 +37,15 @@
         "@type": "WebSite",
         "name": "VersaKit",
         "alternateName": "VersaKit - Online Tools Collection",
-        "url": "https://versakit.com/",  
+        "url": "https://versakit.com/",
         "description": "A comprehensive collection of simple yet practical online tools including counters, dice rollers, password generators, temperature converters, BMI calculators, age calculators, and unit converters. All tools are free to use and designed to handle your daily digital needs efficiently.",
         "publisher": {
-            "@type": "Organization",  
+            "@type": "Organization",
             "name": "VersaKit",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://versakit.com/img/logo.png"
+            },
             "founder": {
                 "@type": "Person",
                 "name": "William Yen"
@@ -49,12 +53,93 @@
         },
         "potentialAction": {
             "@type": "SearchAction",
-                "target": {
+            "target": {
                 "@type": "EntryPoint",
                 "urlTemplate": "https://versakit.com/all-tools?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
+        },
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VersaKit",
+        "url": "https://versakit.com/",
+        "logo": "https://versakit.com/img/logo.png",
+        "description": "Free all-in-one online toolkit featuring practical generators, converters, and calculators designed to boost productivity and save time.",
+        "founder": {
+            "@type": "Person",
+            "name": "William Yen"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "url": "https://versakit.com/contact"
         }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "VersaKit All Tools",
+        "description": "Complete collection of 32 free online tools and calculators",
+        "numberOfItems": 32,
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "item": {"@type": "WebApplication", "name": "BMI Calculator", "url": "https://versakit.com/calculators/bmi"}},
+            {"@type": "ListItem", "position": 2, "item": {"@type": "WebApplication", "name": "Age Calculator", "url": "https://versakit.com/calculators/age"}},
+            {"@type": "ListItem", "position": 3, "item": {"@type": "WebApplication", "name": "Mortgage Calculator", "url": "https://versakit.com/calculators/mortgage"}},
+            {"@type": "ListItem", "position": 4, "item": {"@type": "WebApplication", "name": "EMI Calculator", "url": "https://versakit.com/calculators/emi"}},
+            {"@type": "ListItem", "position": 5, "item": {"@type": "WebApplication", "name": "Compound Interest Calculator", "url": "https://versakit.com/calculators/compound-interest"}},
+            {"@type": "ListItem", "position": 6, "item": {"@type": "WebApplication", "name": "Retirement Calculator", "url": "https://versakit.com/calculators/retirement"}},
+            {"@type": "ListItem", "position": 7, "item": {"@type": "WebApplication", "name": "ROI Calculator", "url": "https://versakit.com/calculators/roi"}},
+            {"@type": "ListItem", "position": 8, "item": {"@type": "WebApplication", "name": "Currency Converter", "url": "https://versakit.com/converters/currency"}},
+            {"@type": "ListItem", "position": 9, "item": {"@type": "WebApplication", "name": "Temperature Converter", "url": "https://versakit.com/converters/temperature"}},
+            {"@type": "ListItem", "position": 10, "item": {"@type": "WebApplication", "name": "Length Converter", "url": "https://versakit.com/converters/length"}},
+            {"@type": "ListItem", "position": 11, "item": {"@type": "WebApplication", "name": "Weight Converter", "url": "https://versakit.com/converters/weight"}},
+            {"@type": "ListItem", "position": 12, "item": {"@type": "WebApplication", "name": "Area Converter", "url": "https://versakit.com/converters/area"}},
+            {"@type": "ListItem", "position": 13, "item": {"@type": "WebApplication", "name": "Volume Converter", "url": "https://versakit.com/converters/volume"}},
+            {"@type": "ListItem", "position": 14, "item": {"@type": "WebApplication", "name": "Speed Converter", "url": "https://versakit.com/converters/speed"}},
+            {"@type": "ListItem", "position": 15, "item": {"@type": "WebApplication", "name": "Morse Code Converter", "url": "https://versakit.com/converters/morse-code"}},
+            {"@type": "ListItem", "position": 16, "item": {"@type": "WebApplication", "name": "Angle Converter", "url": "https://versakit.com/converters/angle"}},
+            {"@type": "ListItem", "position": 17, "item": {"@type": "WebApplication", "name": "Density Converter", "url": "https://versakit.com/converters/density"}},
+            {"@type": "ListItem", "position": 18, "item": {"@type": "WebApplication", "name": "Energy Converter", "url": "https://versakit.com/converters/energy"}},
+            {"@type": "ListItem", "position": 19, "item": {"@type": "WebApplication", "name": "Power Converter", "url": "https://versakit.com/converters/power"}},
+            {"@type": "ListItem", "position": 20, "item": {"@type": "WebApplication", "name": "Pressure Converter", "url": "https://versakit.com/converters/pressure"}},
+            {"@type": "ListItem", "position": 21, "item": {"@type": "WebApplication", "name": "Force Converter", "url": "https://versakit.com/converters/force"}},
+            {"@type": "ListItem", "position": 22, "item": {"@type": "WebApplication", "name": "Viscosity Converter", "url": "https://versakit.com/converters/viscosity"}},
+            {"@type": "ListItem", "position": 23, "item": {"@type": "WebApplication", "name": "File Converter", "url": "https://versakit.com/converters/file"}},
+            {"@type": "ListItem", "position": 24, "item": {"@type": "WebApplication", "name": "Password Generator", "url": "https://versakit.com/generators/password"}},
+            {"@type": "ListItem", "position": 25, "item": {"@type": "WebApplication", "name": "QR Code Generator", "url": "https://versakit.com/generators/qr-code"}},
+            {"@type": "ListItem", "position": 26, "item": {"@type": "WebApplication", "name": "Barcode Generator", "url": "https://versakit.com/generators/barcode"}},
+            {"@type": "ListItem", "position": 27, "item": {"@type": "WebApplication", "name": "Group Generator", "url": "https://versakit.com/generators/group"}},
+            {"@type": "ListItem", "position": 28, "item": {"@type": "WebApplication", "name": "Mock Data Generator", "url": "https://versakit.com/generators/mock-data"}},
+            {"@type": "ListItem", "position": 29, "item": {"@type": "WebApplication", "name": "Counter", "url": "https://versakit.com/others/counter"}},
+            {"@type": "ListItem", "position": 30, "item": {"@type": "WebApplication", "name": "Dice Roll", "url": "https://versakit.com/others/dice-roll"}},
+            {"@type": "ListItem", "position": 31, "item": {"@type": "WebApplication", "name": "Coin Flip", "url": "https://versakit.com/others/coin-flip"}},
+            {"@type": "ListItem", "position": 32, "item": {"@type": "WebApplication", "name": "Wheel Spinner", "url": "https://versakit.com/others/wheel-spinner"}}
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://versakit.com/"
+            }
+        ]
     }
     </script>
 
